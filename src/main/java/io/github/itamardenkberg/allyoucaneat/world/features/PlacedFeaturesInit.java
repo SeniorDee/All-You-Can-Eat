@@ -31,11 +31,11 @@ public class PlacedFeaturesInit {
 //			ConfiguredFeaturesInit.PATCH_STRAWBERRY_BUSH, RarityFilter.onAverageOnceEvery(384),
 //			InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
-	public static final RegistryObject<PlacedFeature> HAZEL_CHECKED = PLACED_FEATURES.register("red_maple_checked",
+	public static final RegistryObject<PlacedFeature> HAZEL_CHECKED = PLACED_FEATURES.register("hazel_checked",
 			() -> new PlacedFeature(ConfiguredFeaturesInit.HAZEL.getHolder().get(),
 					List.of(PlacementUtils.filteredByBlockSurvival(BlockInit.HAZEL_SAPLING.get()))));
 
-	public static final RegistryObject<PlacedFeature> HAZEL_PLACED = PLACED_FEATURES.register("red_maple_placed",
+	public static final RegistryObject<PlacedFeature> HAZEL_PLACED = PLACED_FEATURES.register("hazel_placed",
 			() -> new PlacedFeature(ConfiguredFeaturesInit.HAZEL_SPAWN.getHolder().get(),
 					VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.01f, 2))));
 

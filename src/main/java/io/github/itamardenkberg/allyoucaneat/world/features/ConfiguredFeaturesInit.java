@@ -62,14 +62,10 @@ public class ConfiguredFeaturesInit {
 							.of(new WeightedPlacedFeature(PlacedFeaturesInit.HAZEL_CHECKED.getHolder().get(), 0.5F)),
 							PlacedFeaturesInit.HAZEL_CHECKED.getHolder().get())));
 
-	public static final RegistryObject<ConfiguredFeature<?, ?>> SRAWBERRY_BUSH = CONFIGURED_FEATURES.register("strawberry_bush",
-            () -> new ConfiguredFeature<>(Feature.FLOWER,
-                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.STRAWBERRY_BUSH.get()
+	public static final RegistryObject<ConfiguredFeature<?, ?>> SRAWBERRY_BUSH = CONFIGURED_FEATURES.register(
+			"strawberry_bush",
+			() -> new ConfiguredFeature<>(Feature.FLOWER,
+					new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+							new SimpleBlockConfiguration(BlockStateProvider.simple(BlockInit.STRAWBERRY_BUSH.get()
 									.defaultBlockState().setValue(SweetBerryBushBlock.AGE, Integer.valueOf(3))))))));
-
-	public static void register(IEventBus eventBus) {
-		CONFIGURED_FEATURES.register(eventBus);
-	}
-
 }

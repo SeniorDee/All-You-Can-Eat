@@ -11,6 +11,8 @@ import io.github.itamardenkberg.allyoucaneat.core.init.FluidInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.TileEntitiesInit;
 import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
+import io.github.itamardenkberg.allyoucaneat.world.features.ConfiguredFeaturesInit;
+import io.github.itamardenkberg.allyoucaneat.world.features.PlacedFeaturesInit;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,6 +40,8 @@ public class AllYouCanEat {
 		FluidInit.FLUIDS.register(bus);
 		FluidInit.FLUID_TYPES.register(bus);
 		EffectsInit.EFFECT.register(bus);
+		ConfiguredFeaturesInit.CONFIGURED_FEATURES.register(bus);
+		PlacedFeaturesInit.PLACED_FEATURES.register(bus);
 		if (ModList.get().isLoaded("farmersdelight")) {
 			FDItemInit.ITEMS.register(bus);
 		}
