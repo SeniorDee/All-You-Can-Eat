@@ -8,6 +8,7 @@ import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.EffectsInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.EntityTypesInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.FluidInit;
+import io.github.itamardenkberg.allyoucaneat.core.init.FluidTypesInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.TileEntitiesInit;
 import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
@@ -38,7 +39,7 @@ public class AllYouCanEat {
 		TileEntitiesInit.BLOCK_ENTITES.register(bus);
 		EntityTypesInit.ENTITY_TYPES.register(bus);
 		FluidInit.FLUIDS.register(bus);
-		FluidInit.FLUID_TYPES.register(bus);
+		FluidTypesInit.FLUID_TYPES.register(bus);
 		EffectsInit.EFFECT.register(bus);
 		ConfiguredFeaturesInit.CONFIGURED_FEATURES.register(bus);
 		PlacedFeaturesInit.PLACED_FEATURES.register(bus);

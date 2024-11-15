@@ -78,12 +78,12 @@ public class ItemInit {
 			() -> new BoatItem(new Item.Properties().stacksTo(16).tab(AllYouCanEat.TAB_AYCE), BoatEntity.Type.HAZEL));
 
 	public static final RegistryObject<Item> RED_WINE_BUCKET = ITEMS.register("red_wine_bucket",
-			() -> new BucketItem(FluidInit.RED_WINE_FLUID,
-					new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(AllYouCanEat.TAB_AYCE)));
+			() -> new BucketItem(FluidInit.SOURCE_RED_WINE,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(AllYouCanEat.TAB_AYCE)));
 
 	public static final RegistryObject<Item> WHITE_WINE_BUCKET = ITEMS.register("white_wine_bucket",
-			() -> new BucketItem(FluidInit.WHITE_WINE_FLUID,
-					new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET).tab(AllYouCanEat.TAB_AYCE)));
+			() -> new BucketItem(FluidInit.SOURCE_WHITE_WINE,
+					new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(AllYouCanEat.TAB_AYCE)));
 
 	public static final RegistryObject<Item> TOMATO = ITEMS.register("tomato",
 			() -> new Item(new Item.Properties().food(FoodInit.TOMATO).tab(AllYouCanEat.TAB_AYCE)));

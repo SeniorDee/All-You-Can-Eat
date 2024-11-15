@@ -8,7 +8,6 @@ import io.github.itamardenkberg.allyoucaneat.core.init.FluidInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.TileEntitiesInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.WoodTypesInit;
 import io.github.itamardenkberg.allyoucaneat.world.FoliageColor;
-import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -31,12 +30,10 @@ public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void onClientSetup(FMLClientSetupEvent event) {
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.RED_WINE_FLUID_BLOCK.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.RED_WINE_FLUID.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.RED_WINE_FLOWING.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.WHITE_WINE_FLUID_BLOCK.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.WHITE_WINE_FLUID.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.WHITE_WINE_FLOWING.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(FluidInit.SOURCE_RED_WINE.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_RED_WINE.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(FluidInit.SOURCE_WHITE_WINE.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_WHITE_WINE.get(), RenderType.translucent());
 
 		EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), BoatEntityRenderer::new);
 
@@ -52,6 +49,7 @@ public class ClientEventBusSubscriber {
 		event.registerBlockEntityRenderer(TileEntitiesInit.SIGN_TILE_ENTITIES.get(), SignRenderer::new);
 	}
 
+	@SuppressWarnings("deprecation")
 	@SubscribeEvent
 	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
 		event.getBlockColors().register((p_92626_, tint, pos, p_92629_) -> {
@@ -60,6 +58,7 @@ public class ClientEventBusSubscriber {
 		}, BlockInit.HAZEL_LEAVES.get());
 	}
 
+	@SuppressWarnings("deprecation")
 	@SubscribeEvent
 	public static void onItemColors(RegisterColorHandlersEvent.Item event) {
 		event.getItemColors().register(new HazelLeaveColor(), BlockInit.HAZEL_LEAVES.get().asItem());
