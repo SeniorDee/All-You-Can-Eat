@@ -14,13 +14,16 @@ import io.github.itamardenkberg.allyoucaneat.common.blocks.FlammableSlabBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.FlammableStairBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.MilkCauldronBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.PizzaBlock;
+import io.github.itamardenkberg.allyoucaneat.common.blocks.RedWineCauldronBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.StandingSignBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.StrawberryBushBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.StrawberryCakeBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.TomatoCropBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.WallSignBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.WhiteGrapeCropBlock;
+import io.github.itamardenkberg.allyoucaneat.common.blocks.WhiteWineCauldronBlock;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.WineBottleBlock;
+import io.github.itamardenkberg.allyoucaneat.core.util.CauldronInteractions;
 import io.github.itamardenkberg.allyoucaneat.world.features.tree.HazelTreeGrower;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -28,6 +31,7 @@ import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.HayBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -261,12 +265,26 @@ public class BlockInit {
 			() -> new PizzaBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
 
 	public static final RegistryObject<Block> MILK_CAULDRON = BLOCKS.register("milk_cauldron",
-			() -> new MilkCauldronBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON), (predicate) -> false,
-					CauldronInteractionsInit.MILK_CAULDRON_INTERACTION));
+			() -> new MilkCauldronBlock(BlockBehaviour.Properties.copy(Blocks.WATER_CAULDRON), (predicate) -> false,
+					CauldronInteractions.MILK));
+
+	public static final RegistryObject<Block> RED_WINE_CAULDRON = BLOCKS.register("red_wine_cauldron",
+			() -> new RedWineCauldronBlock(BlockBehaviour.Properties.copy(Blocks.WATER_CAULDRON), (predicate) -> false,
+					CauldronInteractions.RED_WINE));
+
+	public static final RegistryObject<Block> WHITE_WINE_CAULDRON = BLOCKS.register("white_wine_cauldron",
+			() -> new WhiteWineCauldronBlock(BlockBehaviour.Properties.copy(Blocks.WATER_CAULDRON), (predicate) -> false,
+					CauldronInteractions.WHITE_WINE));
 
 	public static final RegistryObject<Block> BROWN_WHEAT_CROP = BLOCKS.register("brown_wheat_crop",
 			() -> new BrownWheatCropBlock(Block.Properties.copy(Blocks.WHEAT)));
 
 	public static final RegistryObject<Block> BROWN_HAY_BLOCK = BLOCKS.register("brown_hay_block",
 			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK)));
+
+	public static final RegistryObject<LiquidBlock> RED_WINE_BLOCK = BLOCKS.register("red_wine_block",
+			() -> new LiquidBlock(FluidInit.SOURCE_RED_WINE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+	public static final RegistryObject<LiquidBlock> WHITE_WINE_BLOCK = BLOCKS.register("white_wine_block",
+			() -> new LiquidBlock(FluidInit.SOURCE_WHITE_WINE, BlockBehaviour.Properties.copy(Blocks.WATER)));
 }

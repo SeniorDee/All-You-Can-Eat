@@ -28,6 +28,8 @@ public class MilkCauldronBlock extends LayeredCauldronBlock implements EntityBlo
 	public MilkCauldronBlock(Properties properties, Predicate<Biome.Precipitation> predicate,
 			Map<Item, CauldronInteraction> map) {
 		super(properties, predicate, map);
+
+		this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, 3));
 	}
 
 	@Override
@@ -49,6 +51,7 @@ public class MilkCauldronBlock extends LayeredCauldronBlock implements EntityBlo
 						MilkCauldronTileEntity::tick);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Nullable
 	private static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(
 			BlockEntityType<A> entityType, BlockEntityType<E> entityType2, BlockEntityTicker<? super E> ticker) {
