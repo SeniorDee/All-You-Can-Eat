@@ -83,5 +83,7 @@
 	"advancements.allyoucaneat.chocolate.description": "Make chocolate bars",
 	"advancements.allyoucaneat.drink_soul_shake.title": "Matching Souls",
 	"advancements.allyoucaneat.drink_soul_shake.description": "Drink a soul shake",
+	"config.jade.plugin_allyoucaneat.cheese_process_time": "Cheese Process Time",
+	"jade.allyoucaneat.cheese_process_time": "Time left: %ds",
 	"itemGroup.allyoucaneat": "All You Can Eat"
 }

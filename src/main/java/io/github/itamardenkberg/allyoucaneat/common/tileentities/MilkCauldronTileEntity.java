@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class MilkCauldronTileEntity extends BlockEntity {
-	private int progress = 0;
+	public int progress = 0;
 	private int totalTime = 600;
 
 	public MilkCauldronTileEntity(BlockPos pos, BlockState state) {

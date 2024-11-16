@@ -14,7 +14,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = '1.19.2-0.7v'
+version = '1.19.2-0.6.1v'
 group = 'io.github.itamardenkberg.allyoucaneat'
 archivesBaseName = 'allyoucaneat'
 
@@ -123,7 +123,10 @@ dependencies {
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
     
     // SERENE SEASONS
-    runtimeOnly fg.deobf("curse.maven:sereneseasons-291874:4037228")
+    runtimeOnly fg.deobf("curse.maven:sereneseasons-291874:${serene_seasons_version}")
+    
+    // JADE
+    runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_version}")
     
     // WATER SOURCE
     //runtimeOnly fg.deobf("curse.maven:watersource-388078:3649661")
@@ -132,8 +135,8 @@ dependencies {
     //runtimeOnly fg.deobf("curse.maven:immersive-weathering-forge-592449:4478201")
     
     // FARMERS DELIGHT
-    runtimeOnly fg.deobf("curse.maven:farmers-delight-398521:3999157")
-    compileOnly fg.deobf("curse.maven:farmers-delight-398521:3999157")
+    runtimeOnly fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
+    compileOnly fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_version}")
     
 }
 
@@ -142,7 +145,7 @@ jar {
         attributes([
                 "Specification-Title"     : "allyoucaneat",
                 "Specification-Vendor"    : "ItamarDenkberg",
-                "Specification-Version"   : "1.19.2-0.7v",
+                "Specification-Version"   : "1.19.2-0.6.1v",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "ItamarDenkberg",
