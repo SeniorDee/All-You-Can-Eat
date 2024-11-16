@@ -1,6 +1,6 @@
 {
 	"replace": false,
-	"optional": [
+	"values": [
 		"create:flowing_chocolate",
 		"create:chocolate"
 	]
