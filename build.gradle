@@ -126,7 +126,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:sereneseasons-291874:${serene_seasons_version}")
     
     // JADE
-    runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_version}")
+    implementation fg.deobf("curse.maven:jade-324717:${jade_version}")
     
     // WATER SOURCE
     //runtimeOnly fg.deobf("curse.maven:watersource-388078:3649661")
