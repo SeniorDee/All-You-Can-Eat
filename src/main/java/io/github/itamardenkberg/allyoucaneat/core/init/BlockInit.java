@@ -25,8 +25,10 @@ import io.github.itamardenkberg.allyoucaneat.common.blocks.WhiteWineCauldronBloc
 import io.github.itamardenkberg.allyoucaneat.common.blocks.WineBottleBlock;
 import io.github.itamardenkberg.allyoucaneat.core.util.CauldronInteractions;
 import io.github.itamardenkberg.allyoucaneat.world.features.tree.HazelTreeGrower;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -37,9 +39,8 @@ import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.WoodButtonBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -50,22 +51,22 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> WINE_BOTTLE = BLOCKS.register("wine_bottle",
 			() -> new EmptyWineBottleBlock(
-					BlockBehaviour.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
+					BlockBehaviour.Properties.copy(Blocks.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
 
 	public static final RegistryObject<Block> RED_WINE_BOTTLE = BLOCKS.register("red_wine_bottle",
 			() -> new WineBottleBlock(
-					BlockBehaviour.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
+					BlockBehaviour.Properties.copy(Blocks.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
 
 	public static final RegistryObject<Block> WHITE_WINE_BOTTLE = BLOCKS.register("white_wine_bottle",
 			() -> new WineBottleBlock(
-					BlockBehaviour.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
+					BlockBehaviour.Properties.copy(Blocks.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion()));
 
 	public static final RegistryObject<Block> BLACK_GRAPE_CROP = BLOCKS.register("black_grape_crop",
-			() -> new BlackGrapeCropBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak()
+			() -> new BlackGrapeCropBlock(Block.Properties.copy(Blocks.WHEAT).noCollission().randomTicks().instabreak()
 					.sound(SoundType.CROP)));
 
 	public static final RegistryObject<Block> WHITE_GRAPE_CROP = BLOCKS.register("white_grape_crop",
-			() -> new WhiteGrapeCropBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak()
+			() -> new WhiteGrapeCropBlock(Block.Properties.copy(Blocks.WHEAT).noCollission().randomTicks().instabreak()
 					.sound(SoundType.CROP)));
 
 	public static final RegistryObject<Block> HAZEL_LOG = BLOCKS.register("hazel_log",
@@ -97,23 +98,24 @@ public class BlockInit {
 					BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
 
 	public static final RegistryObject<Block> HAZEL_BUTTON = BLOCKS.register("hazel_button",
-			() -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)));
+			() -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 
 	public static final RegistryObject<Block> HAZEL_PRESSURE_PLATE = BLOCKS.register("hazel_pressure_plate",
 			() -> new PressurePlateBlock(Sensitivity.EVERYTHING,
-					BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)));
+					BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
 
 	public static final RegistryObject<Block> HAZEL_FENCE = BLOCKS.register("hazel_fence",
 			() -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
 
 	public static final RegistryObject<Block> HAZEL_FENCE_GATE = BLOCKS.register("hazel_fence_gate",
-			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)));
+			() -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN,
+					SoundEvents.FENCE_GATE_CLOSE));
 
 	public static final RegistryObject<Block> HAZEL_DOOR = BLOCKS.register("hazel_door",
-			() -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)));
+			() -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
 
 	public static final RegistryObject<Block> HAZEL_TRAPDOOR = BLOCKS.register("hazel_trapdoor",
-			() -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)));
+			() -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
 
 	public static final RegistryObject<Block> HAZEL_SIGN = BLOCKS.register("hazel_sign",
 			() -> new StandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), WoodTypesInit.HAZEL));
@@ -121,8 +123,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> HAZEL_WALL_SIGN = BLOCKS.register("hazel_wall_sign",
 			() -> new WallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), WoodTypesInit.HAZEL));
 
-	public static final RegistryObject<Block> TOMATO_CROP = BLOCKS.register("tomato_crop", () -> new TomatoCropBlock(
-			Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP)));
+	public static final RegistryObject<Block> TOMATO_CROP = BLOCKS.register("tomato_crop",
+			() -> new TomatoCropBlock(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH).noCollission().randomTicks()
+					.instabreak().sound(SoundType.CROP)));
 
 	public static final RegistryObject<Block> CHOCOLATE_CAKE = BLOCKS.register("chocolate_cake",
 			() -> new ChocolateCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
@@ -189,8 +192,8 @@ public class BlockInit {
 					BlockBehaviour.Properties.copy(Blocks.CANDLE_CAKE)));
 
 	public static final RegistryObject<Block> STRAWBERRY_BUSH = BLOCKS.register("strawberry_bush",
-			() -> new StrawberryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak()
-					.sound(SoundType.CROP)));
+			() -> new StrawberryBushBlock(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH).noCollission().randomTicks()
+					.instabreak().sound(SoundType.CROP)));
 
 	public static final RegistryObject<Block> STRAWBERRY_CAKE = BLOCKS.register("strawberry_cake",
 			() -> new StrawberryCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE)));
@@ -273,8 +276,8 @@ public class BlockInit {
 					CauldronInteractions.RED_WINE));
 
 	public static final RegistryObject<Block> WHITE_WINE_CAULDRON = BLOCKS.register("white_wine_cauldron",
-			() -> new WhiteWineCauldronBlock(BlockBehaviour.Properties.copy(Blocks.WATER_CAULDRON), (predicate) -> false,
-					CauldronInteractions.WHITE_WINE));
+			() -> new WhiteWineCauldronBlock(BlockBehaviour.Properties.copy(Blocks.WATER_CAULDRON),
+					(predicate) -> false, CauldronInteractions.WHITE_WINE));
 
 	public static final RegistryObject<Block> BROWN_WHEAT_CROP = BLOCKS.register("brown_wheat_crop",
 			() -> new BrownWheatCropBlock(Block.Properties.copy(Blocks.WHEAT)));

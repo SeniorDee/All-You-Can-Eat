@@ -13,11 +13,11 @@ public class FDItemInit {
 			AllYouCanEat.MOD_ID);
 
 	public static final RegistryObject<Item> PIZZA_SLICE = ITEMS.register("pizza_slice",
-			() -> new Item(new Item.Properties().food(FoodInit.PIZZA_SLICE).tab(AllYouCanEat.TAB_AYCE)));
+			() -> new Item(new Item.Properties().food(FoodInit.PIZZA_SLICE)));
 
 	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = ITEMS.register("chocolate_cake_slice",
-			() -> new Item(new Item.Properties().food(FoodValues.CAKE_SLICE).tab(AllYouCanEat.TAB_AYCE)));
+			() -> new Item(new Item.Properties().food(FoodValues.CAKE_SLICE)));
 
 	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = ITEMS.register("strawberry_cake_slice",
-			() -> new Item(new Item.Properties().food(FoodValues.CAKE_SLICE).tab(AllYouCanEat.TAB_AYCE)));
+			() -> new Item(new Item.Properties().food(FoodValues.CAKE_SLICE)));
 }

@@ -115,8 +115,8 @@ public class CandleStrawberryCakeBlock extends AbstractCandleBlock {
 				: super.updateShape(state, direction, blockState, world, pos, blockPos);
 	}
 
-	public boolean canSurvive(BlockState p_152891_, LevelReader p_152892_, BlockPos p_152893_) {
-		return p_152892_.getBlockState(p_152893_.below()).getMaterial().isSolid();
+	public boolean canSurvive(BlockState state, LevelReader reader, BlockPos pos) {
+		return reader.getBlockState(pos.below()).isSolid();
 	}
 
 	public int getAnalogOutputSignal(BlockState p_152880_, Level p_152881_, BlockPos p_152882_) {

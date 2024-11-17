@@ -5,10 +5,13 @@ import io.github.itamardenkberg.allyoucaneat.client.render.entity.BoatEntityRend
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.EntityTypesInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.FluidInit;
+import io.github.itamardenkberg.allyoucaneat.core.init.ModelLayerInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.TileEntitiesInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.WoodTypesInit;
 import io.github.itamardenkberg.allyoucaneat.world.FoliageColor;
 import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -18,6 +21,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent.RegisterRenderers;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -35,13 +39,21 @@ public class ClientEventBusSubscriber {
 		ItemBlockRenderTypes.setRenderLayer(FluidInit.SOURCE_WHITE_WINE.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_WHITE_WINE.get(), RenderType.translucent());
 
-		EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), BoatEntityRenderer::new);
+		EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), context -> new BoatEntityRenderer(context, false));
+		EntityRenderers.register(EntityTypesInit.CHEST_BOAT_ENTITY.get(),
+				context -> new BoatEntityRenderer(context, true));
 
 		WoodType.register(WoodTypesInit.HAZEL);
 
 		event.enqueueWork(() -> {
 			Sheets.addWoodType(WoodTypesInit.HAZEL);
 		});
+	}
+
+	@SubscribeEvent
+	public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(ModelLayerInit.HAZEL_BOAT_LAYER, BoatModel::createBodyModel);
+		event.registerLayerDefinition(ModelLayerInit.HAZEL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
 	}
 
 	@SubscribeEvent

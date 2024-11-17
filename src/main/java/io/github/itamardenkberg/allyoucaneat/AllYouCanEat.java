@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import io.github.itamardenkberg.allyoucaneat.core.config.CommonConfig;
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
+import io.github.itamardenkberg.allyoucaneat.core.init.CreativeTabInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.EffectsInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.EntityTypesInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.FluidInit;
@@ -12,11 +13,8 @@ import io.github.itamardenkberg.allyoucaneat.core.init.FluidTypesInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.TileEntitiesInit;
 import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
-import io.github.itamardenkberg.allyoucaneat.world.features.ConfiguredFeaturesInit;
-import io.github.itamardenkberg.allyoucaneat.world.features.PlacedFeaturesInit;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -33,6 +31,7 @@ public class AllYouCanEat {
 	public AllYouCanEat() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		bus.addListener(this::setup);
+		bus.addListener(this::addCreative);
 
 		ItemInit.ITEMS.register(bus);
 		BlockInit.BLOCKS.register(bus);
@@ -41,8 +40,7 @@ public class AllYouCanEat {
 		FluidInit.FLUIDS.register(bus);
 		FluidTypesInit.FLUID_TYPES.register(bus);
 		EffectsInit.EFFECT.register(bus);
-		ConfiguredFeaturesInit.CONFIGURED_FEATURES.register(bus);
-		PlacedFeaturesInit.PLACED_FEATURES.register(bus);
+
 		if (ModList.get().isLoaded("farmersdelight")) {
 			FDItemInit.ITEMS.register(bus);
 		}
@@ -60,10 +58,75 @@ public class AllYouCanEat {
 		});
 	}
 
-	public static final CreativeModeTab TAB_AYCE = new CreativeModeTab("allyoucaneat") {
-		@Override
-		public ItemStack makeIcon() {
-			return new ItemStack(ItemInit.RED_WINE_BOTTLE.get());
+	private void addCreative(BuildCreativeModeTabContentsEvent event) {
+		if (event.getTab() == CreativeTabInit.MAIN.get()) {
+			event.accept(ItemInit.WINE_GLASS.get());
+			event.accept(ItemInit.RED_WINE_GLASS.get());
+			event.accept(ItemInit.WHITE_WINE_GLASS.get());
+			event.accept(ItemInit.WINE_BOTTLE.get());
+			event.accept(ItemInit.RED_WINE_BOTTLE.get());
+			event.accept(ItemInit.WHITE_WINE_BOTTLE.get());
+			event.accept(ItemInit.BLACK_GRAPE.get());
+			event.accept(ItemInit.WHITE_GRAPE.get());
+			event.accept(ItemInit.BLACK_GRAPE_SEEDS.get());
+			event.accept(ItemInit.WHITE_GRAPE_SEEDS.get());
+			event.accept(ItemInit.RED_WINE_BUCKET.get());
+			event.accept(ItemInit.WHITE_WINE_BUCKET.get());
+			event.accept(ItemInit.GELATIN.get());
+			event.accept(ItemInit.MARSHMALLOW_ON_A_STICK.get());
+			event.accept(ItemInit.ROASTED_MARSHMALLOW_ON_A_STICK.get());
+			event.accept(ItemInit.HAZELNUT.get());
+			event.accept(ItemInit.HAZEL_LOG.get());
+			event.accept(ItemInit.STRIPPED_HAZEL_LOG.get());
+			event.accept(ItemInit.HAZEL_WOOD.get());
+			event.accept(ItemInit.STRIPPED_HAZEL_WOOD.get());
+			event.accept(ItemInit.HAZEL_PLANKS.get());
+			event.accept(ItemInit.HAZEL_SLAB.get());
+			event.accept(ItemInit.HAZEL_STAIRS.get());
+			event.accept(ItemInit.HAZEL_BUTTON.get());
+			event.accept(ItemInit.HAZEL_PRESSURE_PLATE.get());
+			event.accept(ItemInit.HAZEL_FENCE.get());
+			event.accept(ItemInit.HAZEL_FENCE_GATE.get());
+			event.accept(ItemInit.HAZEL_DOOR.get());
+			event.accept(ItemInit.HAZEL_TRAPDOOR.get());
+			event.accept(ItemInit.HAZEL_SIGN_ITEM.get());
+			event.accept(ItemInit.HAZEL_BOAT.get());
+			event.accept(ItemInit.HAZEL_CHEST_BOAT.get());
+			event.accept(ItemInit.HAZEL_LEAVES.get());
+			event.accept(ItemInit.HAZEL_SAPLING.get());
+			event.accept(ItemInit.TOMATO.get());
+			event.accept(ItemInit.TOMATO_SEEDS.get());
+			event.accept(ItemInit.STRAWBERRY.get());
+			event.accept(ItemInit.SUGARED_STRAWBERRY.get());
+			event.accept(ItemInit.STRAWBERRY_JAM.get());
+			event.accept(ItemInit.STRAWBERRY_CAKE.get());
+			event.accept(ItemInit.CHORUS_CHOCOLATE_COVERED_STRAWBERRY.get());
+			event.accept(ItemInit.CHOCOLATE_COVERED_STRAWBERRY.get());
+			event.accept(ItemInit.WHITE_CHOCOLATE_COVERED_STRAWBERRY.get());
+			event.accept(ItemInit.CHOCOLATE_BAR.get());
+			event.accept(ItemInit.WHITE_CHOCOLATE_BAR.get());
+			event.accept(ItemInit.CHORUS_CHOCOLATE_BAR.get());
+			event.accept(ItemInit.CHOCOLATE_BAR_WITH_NUTS.get());
+			event.accept(ItemInit.HOT_CHOCOLATE.get());
+			event.accept(ItemInit.CHOCOLATE_CAKE.get());
+			event.accept(ItemInit.BROWN_WHEAT.get());
+			event.accept(ItemInit.BROWN_WHEAT_SEEDS.get());
+			event.accept(ItemInit.BROWN_HAY_BLOCK.get());
+			event.accept(ItemInit.RAISINS.get());
+			event.accept(ItemInit.RAISIN_COOKIE.get());
+			event.accept(ItemInit.MILK_BOTTLE.get());
+			event.accept(ItemInit.CHEESE.get());
+			event.accept(ItemInit.PIZZA.get());
+			event.accept(ItemInit.CHILI_PEPPER.get());
+			event.accept(ItemInit.PARROTFRUIT.get());
+			event.accept(ItemInit.SOUL_BOTTLE.get());
+			event.accept(ItemInit.SOUL_SHAKE.get());
+
+			if (ModList.get().isLoaded("farmersdelight")) {
+				event.accept(FDItemInit.CHOCOLATE_CAKE_SLICE.get());
+				event.accept(FDItemInit.STRAWBERRY_CAKE_SLICE.get());
+				event.accept(FDItemInit.PIZZA_SLICE.get());
+			}
 		}
-	};
+	}
 }

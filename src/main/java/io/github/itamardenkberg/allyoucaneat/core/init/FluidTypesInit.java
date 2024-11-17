@@ -1,6 +1,6 @@
 package io.github.itamardenkberg.allyoucaneat.core.init;
 
-import com.mojang.math.Vector3f;
+import org.joml.Vector3f;
 
 import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
 import io.github.itamardenkberg.allyoucaneat.common.fluids.BaseFluidType;

@@ -15,8 +15,8 @@ public class WitherResistanceEffect extends MobEffect {
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		DamageSource source = entity.getLastDamageSource();
-		if (!entity.level.isClientSide()) {
-			if (source == DamageSource.WITHER) {
+		if (!entity.level().isClientSide()) {
+			if (source == entity.damageSources().wither()) {
 				entity.removeEffect(MobEffects.WITHER);
 			}
 		}

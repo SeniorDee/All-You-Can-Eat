@@ -4,50 +4,53 @@ import java.util.List;
 
 import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
-import net.minecraft.core.Registry;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 public class PlacedFeaturesInit {
-	public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister
-			.create(Registry.PLACED_FEATURE_REGISTRY, AllYouCanEat.MOD_ID);
+	public static final ResourceKey<PlacedFeature> HAZEL_PLACED_KEY = registerKey("hazel_placed");
+	public static final ResourceKey<PlacedFeature> PATCH_STRAWBERRY_BUSH_COMMON_PLACED_KEY = registerKey(
+			"patch_strawberry_bush_common");
+	public static final ResourceKey<PlacedFeature> PATCH_STRAWBERRY_BUSH_RARE_PLACED_KEY = registerKey(
+			"patch_strawberry_bush_rare");
 
-//	public static final Holder<PlacedFeature> HAZEL = PlacementUtils.register("hazel",
-//			ConfiguredFeaturesInit.HAZEL_TREE_SPAWN,
-//			VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.01f, 1)));
-//
-//	public static final Holder<PlacedFeature> PATCH_STRAWBERRY_COMMON = PlacementUtils.register(
-//			"patch_strawberry_common", ConfiguredFeaturesInit.PATCH_STRAWBERRY_BUSH,
-//			RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-//			BiomeFilter.biome());
-//
-//	public static final Holder<PlacedFeature> PATCH_STRAWBERRY_RARE = PlacementUtils.register("patch_strawberry_rare",
-//			ConfiguredFeaturesInit.PATCH_STRAWBERRY_BUSH, RarityFilter.onAverageOnceEvery(384),
-//			InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+	public static void bootstrap(BootstapContext<PlacedFeature> context) {
+		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-	public static final RegistryObject<PlacedFeature> HAZEL_CHECKED = PLACED_FEATURES.register("hazel_checked",
-			() -> new PlacedFeature(ConfiguredFeaturesInit.HAZEL.getHolder().get(),
-					List.of(PlacementUtils.filteredByBlockSurvival(BlockInit.HAZEL_SAPLING.get()))));
+		register(context, HAZEL_PLACED_KEY, configuredFeatures.getOrThrow(ConfiguredFeaturesInit.HAZEL_KEY),
+				VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.01f, 2),
+						BlockInit.HAZEL_SAPLING.get()));
 
-	public static final RegistryObject<PlacedFeature> HAZEL_PLACED = PLACED_FEATURES.register("hazel_placed",
-			() -> new PlacedFeature(ConfiguredFeaturesInit.HAZEL_SPAWN.getHolder().get(),
-					VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.01f, 2))));
+		register(context, PATCH_STRAWBERRY_BUSH_COMMON_PLACED_KEY,
+				configuredFeatures.getOrThrow(ConfiguredFeaturesInit.STRAWBERRY_BUSH_KEY),
+				List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,
+						BiomeFilter.biome()));
 
-	public static final RegistryObject<PlacedFeature> PATCH_STRAWBERRY_BUSH_COMMON = PLACED_FEATURES.register(
-			"patch_strawberry_bush_common",
-			() -> new PlacedFeature(ConfiguredFeaturesInit.SRAWBERRY_BUSH.getHolder().get(),
-					List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,
-							BiomeFilter.biome())));
+		register(context, PATCH_STRAWBERRY_BUSH_RARE_PLACED_KEY,
+				configuredFeatures.getOrThrow(ConfiguredFeaturesInit.STRAWBERRY_BUSH_KEY),
+				List.of(RarityFilter.onAverageOnceEvery(384), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,
+						BiomeFilter.biome()));
 
-	public static final RegistryObject<PlacedFeature> PATCH_STRAWBERRY_BUSH_RARE = PLACED_FEATURES.register(
-			"patch_strawberry_bush_rare",
-			() -> new PlacedFeature(ConfiguredFeaturesInit.SRAWBERRY_BUSH.getHolder().get(),
-					List.of(RarityFilter.onAverageOnceEvery(384), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,
-							BiomeFilter.biome())));
+	}
+
+	private static ResourceKey<PlacedFeature> registerKey(String name) {
+		return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(AllYouCanEat.MOD_ID, name));
+	}
+
+	private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
+			Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
+		context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
+	}
 }

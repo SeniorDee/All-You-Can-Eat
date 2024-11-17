@@ -4,7 +4,6 @@ import io.github.itamardenkberg.allyoucaneat.core.init.EffectsInit;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -31,7 +30,7 @@ public class ChiliPepperItem extends Item {
 
 		if (!world.isClientSide) {
 			entity.addEffect(new MobEffectInstance(EffectsInit.FLAMING.get(), 600), entity);
-			entity.hurt(DamageSource.ON_FIRE, 0.5f);
+			entity.hurt(entity.damageSources().onFire(), 0.5f);
 		}
 
 		return super.finishUsingItem(stack, world, entity);

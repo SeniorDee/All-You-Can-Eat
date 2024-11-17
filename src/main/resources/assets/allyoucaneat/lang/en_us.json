@@ -39,6 +39,7 @@
 	"item.allyoucaneat.raisin_cookie": "Raisin Cookie",
 	"item.allyoucaneat.parrotfruit": "Parrotfruit",
 	"item.allyoucaneat.chili_pepper": "Chili Pepper",
+	"item.allyoucaneat.hazel_chest_boat": "Hazel Chest Boat",
 	"block.allyoucaneat.wine_bottle": "Wine Bottle",
 	"block.allyoucaneat.red_wine_bottle": "Red Wine Bottle",
 	"block.allyoucaneat.white_wine_bottle": "White Wine Bottle",
@@ -68,6 +69,7 @@
 	"block.allyoucaneat.brown_hay_block": "Brown Hay Bale",
 	"block.allyoucaneat.brown_wheat": "Brown Wheat",
 	"entity.allyoucaneat.boat": "Boat",
+	"entity.allyoucaneat.chest_boat": "Chest Boat",
 	"effect.allyoucaneat.wither_resistance": "Wither Resistance",
 	"fluid.allyoucaneat.red_wine_fluid": "Red Wine",
 	"fluid.allyoucaneat.white_wine_fluid": "White Wine",
@@ -85,5 +87,5 @@
 	"advancements.allyoucaneat.drink_soul_shake.description": "Drink a soul shake",
 	"config.jade.plugin_allyoucaneat.cheese_process_time": "Cheese Process Time",
 	"jade.allyoucaneat.cheese_process_time": "Time left: %ds",
-	"itemGroup.allyoucaneat": "All You Can Eat"
+	"item_group.allyoucaneat.main": "All You Can Eat"
 }

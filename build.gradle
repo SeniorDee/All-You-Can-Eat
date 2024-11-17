@@ -1,20 +1,21 @@
-buildscript {
-    repositories {
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-    }
-    dependencies {
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-    }
-}
+//buildscript {
+//    repositories {
+//        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+//    }
+//    dependencies {
+//        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+//    }
+//}
 
 plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
-version = '1.19.2-0.6.1v'
+version = '1.20.1-0.6.2v'
 group = 'io.github.itamardenkberg.allyoucaneat'
 archivesBaseName = 'allyoucaneat'
 
@@ -22,7 +23,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
-    mappings channel: 'parchment', version: '2022.08.14-1.19.2'
+    mappings channel: 'parchment', version: '2023.09.03-1.20.1'
 
     runs {
         client {
@@ -111,7 +112,7 @@ repositories {
 
 dependencies {
 	// FORGE
-    minecraft 'net.minecraftforge:forge:1.19.2-43.2.0'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
     
     // MIXIN AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor' 
@@ -124,6 +125,7 @@ dependencies {
     
     // SERENE SEASONS
     runtimeOnly fg.deobf("curse.maven:sereneseasons-291874:${serene_seasons_version}")
+    runtimeOnly fg.deobf("curse.maven:glitchcore-955399:${glitchcore_version}")
     
     // JADE
     implementation fg.deobf("curse.maven:jade-324717:${jade_version}")
@@ -145,7 +147,7 @@ jar {
         attributes([
                 "Specification-Title"     : "allyoucaneat",
                 "Specification-Vendor"    : "ItamarDenkberg",
-                "Specification-Version"   : "1.19.2-0.6.1v",
+                "Specification-Version"   : "1.20.1-0.6.2v",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "ItamarDenkberg",

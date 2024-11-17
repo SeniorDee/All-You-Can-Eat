@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
@@ -86,7 +87,8 @@ public class StrawberryBushBlock extends BushBlock implements BonemealableBlock 
 		builder.add(AGE);
 	}
 
-	public boolean isValidBonemealTarget(BlockGetter getter, BlockPos pos, BlockState state, boolean valid) {
+	@Override
+	public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
 		return state.getValue(AGE) < 3;
 	}
 
@@ -94,7 +96,7 @@ public class StrawberryBushBlock extends BushBlock implements BonemealableBlock 
 	public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
 		return false;
 	}
-	
+
 	@Override
 	public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
 		int i = Math.min(3, state.getValue(AGE) + 1);
