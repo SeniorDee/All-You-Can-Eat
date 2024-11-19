@@ -1,2 +1,2 @@
-gradlew genEclipseRuns --refresh-dependencies&&gradlew eclipse
+CALL gradlew genEclipseRuns --refresh-dependencies&&gradlew eclipse
 pause
