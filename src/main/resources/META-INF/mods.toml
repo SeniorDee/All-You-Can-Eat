@@ -1,7 +1,7 @@
 modLoader="javafml" #mandatory
 loaderVersion="[41,)" #mandatory
 license="MIT License"
-issueTrackerURL="https://github.com/ItamarDenkberg/All-You-Can-Eat/issues" #optional
+issueTrackerURL="https://github.com/SeniorDee/All-You-Can-Eat/issues" #optional
 [[mods]] #mandatory
 modId="allyoucaneat" #mandatory
 version="0.6.1" #mandatory
