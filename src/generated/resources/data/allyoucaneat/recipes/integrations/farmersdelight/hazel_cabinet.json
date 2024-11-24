@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "fd_cabinet",
+  "key": {
+    "D": {
+      "item": "allyoucaneat:hazel_trapdoor"
+    },
+    "_": {
+      "item": "allyoucaneat:hazel_slab"
+    }
+  },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "result": {
+    "item": "allyoucaneat:hazel_cabinet"
+  },
+  "show_notification": true
+}

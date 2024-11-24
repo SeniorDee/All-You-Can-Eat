@@ -3,18 +3,14 @@ package io.github.itamardenkberg.allyoucaneat.datagen.loot;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.*;
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
+import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
+import io.github.itamardenkberg.allyoucaneat.datagen.integration.farmersdelight.loot.FDBlockLootTables;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlag;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -26,9 +22,13 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class BlockLootTables extends BlockLootSubProvider {
     public BlockLootTables() {
@@ -142,9 +142,13 @@ public class BlockLootTables extends BlockLootSubProvider {
         this.dropOther(BlockInit.RED_WINE_CAULDRON.get(), Blocks.CAULDRON);
         this.dropOther(BlockInit.WHITE_WINE_CAULDRON.get(), Blocks.CAULDRON);
 
-        this.add(BlockInit.HAZEL_LEAVES.get(), (block) -> {
-            return this.createHazelLeavesDrops(block, Blocks.OAK_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
-        });
+        this.add(BlockInit.HAZEL_LEAVES.get(), (block) -> this.createHazelLeavesDrops(block, Blocks.OAK_SAPLING,
+                NORMAL_LEAVES_SAPLING_CHANCES));
+
+        // Farmer's Delight
+        if (ModList.get().isLoaded("farmersdelight")) {
+            this.add(FDBlockInit.HAZEL_CABINET.get(), this::createNameableBlockEntityTable);
+        }
     }
 
     protected LootItemCondition.Builder lootItemCondiditionBuilder(RegistryObject<Block> block, IntegerProperty age,
@@ -164,6 +168,13 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        if (ModList.get().isLoaded("farmersdelight")) {
+            return Stream.concat(BlockInit.BLOCKS.getEntries().stream()
+                    .map(RegistryObject::get), FDBlockInit.BLOCKS.getEntries().stream()
+                    .map(RegistryObject::get))::iterator;
+        } else {
+            return BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        }
     }
+
 }

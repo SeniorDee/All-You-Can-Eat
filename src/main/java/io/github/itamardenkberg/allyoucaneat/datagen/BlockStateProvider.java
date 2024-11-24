@@ -4,18 +4,21 @@ import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
 import io.github.itamardenkberg.allyoucaneat.common.blocks.*;
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockStatePropertiesInit;
+import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.WallSignBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 import java.util.function.Function;
 
@@ -142,6 +145,10 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
         customBlock(BlockInit.RED_WINE_BLOCK);
         customBlock(BlockInit.WHITE_WINE_BLOCK);
         customBlock(BlockInit.WINE_BOTTLE);
+
+        if (ModList.get().isLoaded("farmersdelight")) {
+            cabinetBlock(FDBlockInit.HAZEL_CABINET.get(), "hazel");
+        }
     }
 
     private void blockItem(RegistryObject<Block> block) {
@@ -345,5 +352,17 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
                             "block/" + ForgeRegistries.BLOCKS.getKey(wineBottle.get())
                             .getPath() + "_level" + i))).addModel();
         }
+    }
+
+    public void cabinetBlock(Block block, String woodType) {
+        this.horizontalBlock(block, (state) -> {
+            String suffix = (Boolean) state.getValue(CabinetBlock.OPEN) ? "_open" : "";
+            return this.models().orientable(ForgeRegistries.BLOCKS.getKey(block)
+                    .getPath() + suffix, new ResourceLocation(AllYouCanEat.MOD_ID,
+                    "block/integration/farmersdelight" + "/" + woodType + "_cabinet_side"),
+                    new ResourceLocation(AllYouCanEat.MOD_ID, "block/integration" + "/farmersdelight/" + woodType +
+                            "_cabinet_front" + suffix), new ResourceLocation(AllYouCanEat.MOD_ID,
+                            "block/integration" + "/farmersdelight/" + woodType + "_cabinet_top"));
+        });
     }
 }

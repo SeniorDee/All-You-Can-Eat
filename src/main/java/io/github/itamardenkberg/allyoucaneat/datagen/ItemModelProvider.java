@@ -3,6 +3,7 @@ package io.github.itamardenkberg.allyoucaneat.datagen;
 import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
+import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -89,6 +90,8 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
             simpleItem(FDItemInit.CHOCOLATE_CAKE_SLICE);
             simpleItem(FDItemInit.STRAWBERRY_CAKE_SLICE);
             simpleItem(FDItemInit.PIZZA_SLICE);
+
+            evenSimplerBlockItem(FDBlockInit.HAZEL_CABINET);
         }
     }
 

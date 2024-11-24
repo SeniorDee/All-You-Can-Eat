@@ -5,6 +5,7 @@ import io.github.itamardenkberg.allyoucaneat.common.recipes.ShapelessRecipeHelpe
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.TagInit;
+import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -197,6 +198,11 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
                     .requires(FDItemInit.STRAWBERRY_CAKE_SLICE.get(), 7)
                     .unlockedBy("has_strawberry_cake_slice", has(FDItemInit.STRAWBERRY_CAKE_SLICE.get()))
                     .save(writer, AllYouCanEat.MOD_ID + ":integrations/farmersdelight/strawberry_cake_from_slices");
+            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, FDBlockInit.HAZEL_CABINET.get()).pattern("___")
+                    .pattern("D D").pattern("___").define('_', ItemInit.HAZEL_SLAB.get())
+                    .define('D', ItemInit.HAZEL_TRAPDOOR.get())
+                    .unlockedBy("has_hazel_trapdoor", has(ItemInit.HAZEL_TRAPDOOR.get())).group("fd_cabinet")
+                    .save(writer, AllYouCanEat.MOD_ID + ":integrations/farmersdelight/hazel_cabinet");
         }
     }
 

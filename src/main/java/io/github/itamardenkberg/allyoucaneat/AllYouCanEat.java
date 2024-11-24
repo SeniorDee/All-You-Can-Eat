@@ -1,5 +1,6 @@
 package io.github.itamardenkberg.allyoucaneat;
 
+import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,6 +45,7 @@ public class AllYouCanEat {
 
         if (ModList.get().isLoaded("farmersdelight")) {
             FDItemInit.ITEMS.register(bus);
+            FDBlockInit.BLOCKS.register(bus);
         }
 
         ModLoadingContext.get().registerConfig(Type.COMMON, CommonConfig.SPEC, "ayce-common.toml");

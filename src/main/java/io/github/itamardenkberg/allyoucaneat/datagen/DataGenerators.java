@@ -1,10 +1,6 @@
 package io.github.itamardenkberg.allyoucaneat.datagen;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
-import io.github.itamardenkberg.allyoucaneat.datagen.advancement.AdvancementGenerator;
 import io.github.itamardenkberg.allyoucaneat.datagen.advancement.AdvancementProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -13,6 +9,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = AllYouCanEat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
@@ -41,5 +39,17 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new AdvancementProvider(output, lookupProvider,
                 existingFileHelper));
+
+        // if (ModList.get().isLoaded("farmersdelight")) {
+        //generator.addProvider(event.includeClient(), new FDBlockStateProvider(output, existingFileHelper));
+
+        //            FDBlockTagProvider fdBlockTagProvider = generator.addProvider(event.includeServer(),
+        //                    new FDBlockTagProvider(output, lookupProvider, existingFileHelper));
+        //            generator.addProvider(event.includeServer(), new FDItemTagProvider(output, lookupProvider,
+        //                    fdBlockTagProvider.contentsGetter(), existingFileHelper));
+
+        //            generator.addProvider(event.includeServer(), new FDRecipeProvider(output));
+        //generator.addProvider(event.includeServer(), FDLootTableProvider.create(output));
+        //  }
     }
 }

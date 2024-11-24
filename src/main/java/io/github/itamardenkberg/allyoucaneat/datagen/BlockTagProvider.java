@@ -4,7 +4,9 @@ import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
 import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
 import io.github.itamardenkberg.allyoucaneat.core.init.TagInit;
+import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
+import io.github.itamardenkberg.allyoucaneat.datagen.integration.farmersdelight.FDBlockTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -91,6 +93,11 @@ public class BlockTagProvider extends BlockTagsProvider {
                     .add(BlockInit.BLACK_GRAPE_CROP.get(), BlockInit.WHITE_GRAPE_CROP.get(),
                             BlockInit.HAZEL_SAPLING.get(), BlockInit.BROWN_WHEAT_CROP.get(),
                             BlockInit.TOMATO_CROP.get(), BlockInit.STRAWBERRY_BUSH.get());
+        }
+
+        // Farmer's Delight
+        if (ModList.get().isLoaded("farmersdelight")) {
+            this.tag(BlockTags.MINEABLE_WITH_AXE).add(FDBlockInit.HAZEL_CABINET.get());
         }
     }
 }
