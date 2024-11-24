@@ -55,7 +55,7 @@ public class AllYouCanEat {
         ItemInit.addSeeds();
 
         event.enqueueWork(() -> {
-            ItemInit.compstables();
+            ItemInit.compostables();
         });
     }
 
