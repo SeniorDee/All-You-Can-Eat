@@ -32,54 +32,54 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @Mod.EventBusSubscriber(modid = AllYouCanEat.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
 
-	@SubscribeEvent
-	public static void onClientSetup(FMLClientSetupEvent event) {
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.SOURCE_RED_WINE.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_RED_WINE.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.SOURCE_WHITE_WINE.get(), RenderType.translucent());
-		ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_WHITE_WINE.get(), RenderType.translucent());
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.SOURCE_RED_WINE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_RED_WINE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.SOURCE_WHITE_WINE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_WHITE_WINE.get(), RenderType.translucent());
 
-		EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), context -> new BoatEntityRenderer(context, false));
-		EntityRenderers.register(EntityTypesInit.CHEST_BOAT_ENTITY.get(),
-				context -> new BoatEntityRenderer(context, true));
+        EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), context -> new BoatEntityRenderer(context, false));
+        EntityRenderers.register(EntityTypesInit.CHEST_BOAT_ENTITY.get(), context -> new BoatEntityRenderer(context,
+				true));
 
-		WoodType.register(WoodTypesInit.HAZEL);
+        WoodType.register(WoodTypesInit.HAZEL);
 
-		event.enqueueWork(() -> {
-			Sheets.addWoodType(WoodTypesInit.HAZEL);
-		});
-	}
+        event.enqueueWork(() -> {
+            Sheets.addWoodType(WoodTypesInit.HAZEL);
+        });
+    }
 
-	@SubscribeEvent
-	public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		event.registerLayerDefinition(ModelLayerInit.HAZEL_BOAT_LAYER, BoatModel::createBodyModel);
-		event.registerLayerDefinition(ModelLayerInit.HAZEL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
-	}
+    @SubscribeEvent
+    public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ModelLayerInit.HAZEL_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(ModelLayerInit.HAZEL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+    }
 
-	@SubscribeEvent
-	public static void registerTileEntityRenderers(RegisterRenderers event) {
-		event.registerBlockEntityRenderer(TileEntitiesInit.SIGN_TILE_ENTITIES.get(), SignRenderer::new);
-	}
+    @SubscribeEvent
+    public static void registerTileEntityRenderers(RegisterRenderers event) {
+        event.registerBlockEntityRenderer(TileEntitiesInit.SIGN_TILE_ENTITIES.get(), SignRenderer::new);
+    }
 
-	@SuppressWarnings("deprecation")
-	@SubscribeEvent
-	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-		event.getBlockColors().register((p_92626_, tint, pos, p_92629_) -> {
-			return tint != null && pos != null ? BiomeColors.getAverageFoliageColor(tint, pos)
-					: FoliageColor.getHazelColor();
-		}, BlockInit.HAZEL_LEAVES.get());
-	}
+    @SuppressWarnings("deprecation")
+    @SubscribeEvent
+    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        event.getBlockColors().register((p_92626_, tint, pos, p_92629_) -> {
+            return tint != null && pos != null ? BiomeColors.getAverageFoliageColor(tint, pos) :
+					FoliageColor.getHazelColor();
+        }, BlockInit.HAZEL_LEAVES.get());
+    }
 
-	@SuppressWarnings("deprecation")
-	@SubscribeEvent
-	public static void onItemColors(RegisterColorHandlersEvent.Item event) {
-		event.getItemColors().register(new HazelLeaveColor(), BlockInit.HAZEL_LEAVES.get().asItem());
-	}
+    @SuppressWarnings("deprecation")
+    @SubscribeEvent
+    public static void onItemColors(RegisterColorHandlersEvent.Item event) {
+        event.getItemColors().register(new HazelLeaveColor(), BlockInit.HAZEL_LEAVES.get().asItem());
+    }
 
-	public static class HazelLeaveColor implements ItemColor {
-		@Override
-		public int getColor(ItemStack stack, int color) {
-			return FoliageColor.getHazelColor();
-		}
-	}
+    public static class HazelLeaveColor implements ItemColor {
+        @Override
+        public int getColor(ItemStack stack, int color) {
+            return FoliageColor.getHazelColor();
+        }
+    }
 }

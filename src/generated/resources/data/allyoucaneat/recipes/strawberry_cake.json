@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "forge:milk"
+    },
+    "B": {
+      "tag": "forge:sugar"
+    },
+    "C": {
+      "tag": "forge:crops/wheat"
+    },
+    "D": {
+      "tag": "forge:desert/chocolate"
+    },
+    "E": {
+      "tag": "forge:eggs"
+    }
+  },
+  "pattern": [
+    "ADA",
+    "BEB",
+    "CCC"
+  ],
+  "result": {
+    "item": "allyoucaneat:strawberry_cake"
+  },
+  "show_notification": true
+}

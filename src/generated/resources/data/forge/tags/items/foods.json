@@ -1,0 +1,24 @@
+{
+  "values": [
+    "allyoucaneat:red_wine_glass",
+    "allyoucaneat:white_wine_glass",
+    "#forge:fruits",
+    "#forge:vegetables",
+    "#forge:nuts",
+    "#forge:marshmallows",
+    "#forge:sugar",
+    "#forge:eggs",
+    "#forge:wheat",
+    "#forge:chocolate",
+    "#allyoucaneat:chocolate_covered_strawberries",
+    "#forge:raisins",
+    "#forge:cookies",
+    "#forge:cheese",
+    "allyoucaneat:sugared_strawberry",
+    "allyoucaneat:strawberry_jam",
+    "allyoucaneat:hot_chocolate",
+    "allyoucaneat:chili_pepper",
+    "allyoucaneat:parrotfruit",
+    "allyoucaneat:soul_shake"
+  ]
+}

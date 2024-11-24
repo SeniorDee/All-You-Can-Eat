@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "allyoucaneat:soul_bottle"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:sugar"
+    }
+  ],
+  "result": {
+    "item": "allyoucaneat:soul_shake"
+  }
+}

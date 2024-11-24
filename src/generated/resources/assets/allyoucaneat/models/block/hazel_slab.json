@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "allyoucaneat:block/hazel_planks",
+    "side": "allyoucaneat:block/hazel_planks",
+    "top": "allyoucaneat:block/hazel_planks"
+  }
+}

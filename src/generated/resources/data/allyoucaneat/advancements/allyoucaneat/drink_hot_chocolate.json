@@ -1,0 +1,36 @@
+{
+  "parent": "allyoucaneat:allyoucaneat/chocolate",
+  "criteria": {
+    "drink_hot_chocolate": {
+      "conditions": {
+        "item": {
+          "items": [
+            "allyoucaneat:hot_chocolate"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.allyoucaneat.drink_hot_chocolate.description"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "allyoucaneat:hot_chocolate"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.allyoucaneat.drink_hot_chocolate.title"
+    }
+  },
+  "requirements": [
+    [
+      "drink_hot_chocolate"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

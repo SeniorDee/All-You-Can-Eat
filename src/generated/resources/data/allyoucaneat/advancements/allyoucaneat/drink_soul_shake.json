@@ -1,0 +1,38 @@
+{
+  "parent": "allyoucaneat:allyoucaneat/root",
+  "criteria": {
+    "drink_soul_shake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allyoucaneat:soul_shake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.allyoucaneat.drink_soul_shake.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "allyoucaneat:soul_shake"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.allyoucaneat.drink_soul_shake.title"
+    }
+  },
+  "requirements": [
+    [
+      "drink_soul_shake"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

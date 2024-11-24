@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:fruits/white_grapes"
+    },
+    "A": {
+      "item": "allyoucaneat:wine_bottle"
+    }
+  },
+  "pattern": [
+    "###",
+    "#A#",
+    "###"
+  ],
+  "result": {
+    "item": "allyoucaneat:white_wine_bottle"
+  },
+  "show_notification": true
+}

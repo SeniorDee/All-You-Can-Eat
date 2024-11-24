@@ -13,7 +13,6 @@ public class ParrotfruitItem extends Item {
 	
 	@Override
 	public ItemStack finishUsingItem(ItemStack p_41409_, Level p_41410_, LivingEntity p_41411_) {
-		// TODO Auto-generated method stub
 		return super.finishUsingItem(p_41409_, p_41410_, p_41411_);
 	}
 }

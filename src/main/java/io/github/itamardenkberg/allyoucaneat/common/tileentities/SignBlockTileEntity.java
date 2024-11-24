@@ -8,12 +8,12 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class SignBlockTileEntity extends SignBlockEntity {
 
-	public SignBlockTileEntity(BlockPos pos, BlockState state) {
-		super(pos, state);
-	}
+    public SignBlockTileEntity(BlockPos pos, BlockState state) {
+        super(pos, state);
+    }
 
-	@Override
-	public BlockEntityType<?> getType() {
-		return TileEntitiesInit.SIGN_TILE_ENTITIES.get();
-	}
+    @Override
+    public BlockEntityType<?> getType() {
+        return TileEntitiesInit.SIGN_TILE_ENTITIES.get();
+    }
 }

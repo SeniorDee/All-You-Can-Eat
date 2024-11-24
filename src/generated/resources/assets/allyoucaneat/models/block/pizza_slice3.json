@@ -1,0 +1,43 @@
+{
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#inside"
+        },
+        "north": {
+          "texture": "#side"
+        },
+        "south": {
+          "texture": "#inside"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#side"
+        }
+      },
+      "from": [
+        1,
+        0,
+        1
+      ],
+      "to": [
+        8,
+        3,
+        8
+      ]
+    }
+  ],
+  "textures": {
+    "bottom": "allyoucaneat:block/pizza_bottom",
+    "inside": "allyoucaneat:block/pizza_inner",
+    "particle": "allyoucaneat:block/pizza_bottom",
+    "side": "allyoucaneat:block/pizza_side",
+    "top": "allyoucaneat:block/pizza_top"
+  }
+}

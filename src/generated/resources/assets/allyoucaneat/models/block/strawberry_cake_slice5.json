@@ -1,0 +1,58 @@
+{
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#side"
+        },
+        "north": {
+          "texture": "#side"
+        },
+        "south": {
+          "texture": "#side"
+        },
+        "up": {
+          "texture": "#top"
+        }
+      },
+      "from": [
+        11,
+        0,
+        1
+      ],
+      "to": [
+        15,
+        8,
+        15
+      ]
+    },
+    {
+      "faces": {
+        "west": {
+          "texture": "#inside"
+        }
+      },
+      "from": [
+        11,
+        0,
+        1
+      ],
+      "to": [
+        15,
+        8,
+        15
+      ]
+    }
+  ],
+  "textures": {
+    "bottom": "allyoucaneat:block/strawberry_cake_bottom",
+    "inside": "allyoucaneat:block/strawberry_cake_inner",
+    "particle": "allyoucaneat:block/strawberry_cake_side",
+    "side": "allyoucaneat:block/strawberry_cake_side",
+    "top": "allyoucaneat:block/strawberry_cake_top"
+  }
+}

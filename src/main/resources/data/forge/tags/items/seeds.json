@@ -1,8 +1,0 @@
-{
-	"replace": false,
-	"values": [
-		"#forge:seeds/grape",
-		"#forge:seeds/tomato",
-		"#forge:seeds/brown_wheat"
-	]
-}

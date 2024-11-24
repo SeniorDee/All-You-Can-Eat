@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_grape": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:fruits/black_grapes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "allyoucaneat:red_wine_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wine_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allyoucaneat:wine_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_black_grape",
+      "has_wine_bottle",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "allyoucaneat:red_wine_bottle"
+    ]
+  },
+  "sends_telemetry_event": false
+}

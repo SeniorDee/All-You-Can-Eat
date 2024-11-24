@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "tick": {
+      "conditions": {},
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "allyoucaneat:textures/guis/advancements/backgrounds/hazel.png",
+    "description": {
+      "translate": "advancements.allyoucaneat.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "allyoucaneat:red_wine_bottle"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.allyoucaneat.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

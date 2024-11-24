@@ -286,8 +286,8 @@ public class BlockInit {
 			() -> new HayBlock(Block.Properties.copy(Blocks.HAY_BLOCK)));
 
 	public static final RegistryObject<LiquidBlock> RED_WINE_BLOCK = BLOCKS.register("red_wine_block",
-			() -> new LiquidBlock(FluidInit.SOURCE_RED_WINE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+			() -> new LiquidBlock(FluidInit.SOURCE_RED_WINE, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
 	public static final RegistryObject<LiquidBlock> WHITE_WINE_BLOCK = BLOCKS.register("white_wine_block",
-			() -> new LiquidBlock(FluidInit.SOURCE_WHITE_WINE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+			() -> new LiquidBlock(FluidInit.SOURCE_WHITE_WINE, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "allyoucaneat:block/hazel_planks"
+  }
+}

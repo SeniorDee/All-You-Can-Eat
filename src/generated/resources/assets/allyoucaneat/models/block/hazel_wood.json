@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "allyoucaneat:block/hazel_log",
+    "side": "allyoucaneat:block/hazel_log"
+  }
+}

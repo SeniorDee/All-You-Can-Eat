@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:brown_wheat"
+    },
+    "A": {
+      "tag": "forge:raisins"
+    }
+  },
+  "pattern": [
+    "#A#"
+  ],
+  "result": {
+    "item": "allyoucaneat:raisin_cookie"
+  },
+  "show_notification": true
+}

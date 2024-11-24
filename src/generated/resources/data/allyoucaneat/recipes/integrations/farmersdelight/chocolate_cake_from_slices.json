@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "allyoucaneat:chocolate_cake_slice"
+    },
+    {
+      "item": "allyoucaneat:chocolate_cake_slice"
+    },
+    {
+      "item": "allyoucaneat:chocolate_cake_slice"
+    },
+    {
+      "item": "allyoucaneat:chocolate_cake_slice"
+    },
+    {
+      "item": "allyoucaneat:chocolate_cake_slice"
+    },
+    {
+      "item": "allyoucaneat:chocolate_cake_slice"
+    },
+    {
+      "item": "allyoucaneat:chocolate_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "allyoucaneat:chocolate_cake"
+  }
+}

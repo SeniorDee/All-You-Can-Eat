@@ -1,0 +1,213 @@
+{
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottle",
+          "uv": [
+            6.0,
+            0.0,
+            4.0,
+            2.0
+          ]
+        },
+        "east": {
+          "texture": "#bottle",
+          "uv": [
+            0.0,
+            2.0,
+            2.0,
+            8.5
+          ]
+        },
+        "north": {
+          "texture": "#bottle",
+          "uv": [
+            2.0,
+            2.0,
+            4.0,
+            8.5
+          ]
+        },
+        "south": {
+          "texture": "#bottle",
+          "uv": [
+            6.0,
+            2.0,
+            8.0,
+            8.5
+          ]
+        },
+        "up": {
+          "texture": "#bottle",
+          "uv": [
+            4.0,
+            2.0,
+            2.0,
+            0.0
+          ]
+        },
+        "west": {
+          "texture": "#bottle",
+          "uv": [
+            4.0,
+            2.0,
+            6.0,
+            8.5
+          ]
+        }
+      },
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        13,
+        10
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottle",
+          "uv": [
+            11.0,
+            0.0,
+            10.0,
+            1.0
+          ]
+        },
+        "east": {
+          "texture": "#bottle",
+          "uv": [
+            8.0,
+            1.0,
+            9.0,
+            2.5
+          ]
+        },
+        "north": {
+          "texture": "#bottle",
+          "uv": [
+            9.0,
+            1.0,
+            10.0,
+            2.5
+          ]
+        },
+        "south": {
+          "texture": "#bottle",
+          "uv": [
+            11.0,
+            1.0,
+            12.0,
+            2.5
+          ]
+        },
+        "up": {
+          "texture": "#bottle",
+          "uv": [
+            10.0,
+            1.0,
+            9.0,
+            0.0
+          ]
+        },
+        "west": {
+          "texture": "#bottle",
+          "uv": [
+            10.0,
+            1.0,
+            11.0,
+            2.5
+          ]
+        }
+      },
+      "from": [
+        7,
+        13,
+        7
+      ],
+      "to": [
+        9,
+        16,
+        9
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottle",
+          "uv": [
+            11.0,
+            7.0,
+            9.5,
+            8.5
+          ]
+        },
+        "east": {
+          "texture": "#bottle",
+          "uv": [
+            6.5,
+            8.5,
+            8.0,
+            13.5
+          ]
+        },
+        "north": {
+          "texture": "#bottle",
+          "uv": [
+            8.0,
+            8.5,
+            9.5,
+            13.5
+          ]
+        },
+        "south": {
+          "texture": "#bottle",
+          "uv": [
+            11.0,
+            8.5,
+            12.5,
+            13.5
+          ]
+        },
+        "up": {
+          "texture": "#bottle",
+          "uv": [
+            9.5,
+            8.5,
+            8.0,
+            7.0
+          ]
+        },
+        "west": {
+          "texture": "#bottle",
+          "uv": [
+            9.5,
+            8.5,
+            11.0,
+            13.5
+          ]
+        }
+      },
+      "from": [
+        6.1,
+        0.1,
+        6.1
+      ],
+      "to": [
+        9.9,
+        11,
+        9.9
+      ]
+    }
+  ],
+  "render_type": "minecraft:cutout_mipped",
+  "textures": {
+    "bottle": "allyoucaneat:block/red_wine_bottle",
+    "particle": "minecraft:block/glass"
+  }
+}

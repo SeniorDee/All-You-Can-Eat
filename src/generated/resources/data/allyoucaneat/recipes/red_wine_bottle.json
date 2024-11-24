@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:fruits/black_grapes"
+    },
+    "A": {
+      "item": "allyoucaneat:wine_bottle"
+    }
+  },
+  "pattern": [
+    "###",
+    "#A#",
+    "###"
+  ],
+  "result": {
+    "item": "allyoucaneat:red_wine_bottle"
+  },
+  "show_notification": true
+}

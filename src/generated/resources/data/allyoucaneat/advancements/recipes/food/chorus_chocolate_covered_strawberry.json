@@ -1,0 +1,44 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chorus_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:desert/chorus_chocolate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:fruits/strawberries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "allyoucaneat:chorus_chocolate_covered_strawberry"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_strawberry",
+      "has_chorus_chocolate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "allyoucaneat:chorus_chocolate_covered_strawberry"
+    ]
+  },
+  "sends_telemetry_event": false
+}

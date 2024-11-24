@@ -1,0 +1,48 @@
+{
+  "parent": "allyoucaneat:allyoucaneat/root",
+  "criteria": {
+    "chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allyoucaneat:chocolate_bar"
+            ]
+          },
+          {
+            "items": [
+              "allyoucaneat:white_chocolate_bar"
+            ]
+          },
+          {
+            "items": [
+              "allyoucaneat:chorus_chocolate_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.allyoucaneat.chocolate.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "allyoucaneat:chocolate_bar"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.allyoucaneat.chocolate.title"
+    }
+  },
+  "requirements": [
+    [
+      "chocolate"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "allyoucaneat:allyoucaneat/root",
+  "criteria": {
+    "get_grapes": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allyoucaneat:black_grape"
+            ]
+          },
+          {
+            "items": [
+              "allyoucaneat:white_grape"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.allyoucaneat.get_grapes.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "allyoucaneat:black_grape"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.allyoucaneat.get_grapes.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_grapes"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

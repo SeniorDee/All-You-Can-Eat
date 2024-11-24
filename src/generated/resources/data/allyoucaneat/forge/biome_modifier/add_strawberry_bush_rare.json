@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_plains",
+  "features": "allyoucaneat:patch_strawberry_bush_rare",
+  "step": "vegetal_decoration"
+}

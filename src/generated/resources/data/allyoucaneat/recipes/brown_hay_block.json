@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    },
+    {
+      "tag": "forge:brown_wheat"
+    }
+  ],
+  "result": {
+    "item": "allyoucaneat:brown_hay_block"
+  }
+}

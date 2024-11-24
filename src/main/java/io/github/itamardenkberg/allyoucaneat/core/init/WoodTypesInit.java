@@ -5,5 +5,5 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class WoodTypesInit {
-	public static WoodType HAZEL = WoodType.register(new WoodType(AllYouCanEat.MOD_ID + ":hazel", BlockSetType.OAK));
+    public static WoodType HAZEL = WoodType.register(new WoodType(AllYouCanEat.MOD_ID + ":hazel", BlockSetType.OAK));
 }

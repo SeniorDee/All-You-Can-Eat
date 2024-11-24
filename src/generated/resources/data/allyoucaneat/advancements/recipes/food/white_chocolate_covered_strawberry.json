@@ -1,0 +1,44 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_strawberry": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:fruits/strawberries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "allyoucaneat:white_chocolate_covered_strawberry"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:desert/white_chocolate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_strawberry",
+      "has_white_chocolate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "allyoucaneat:white_chocolate_covered_strawberry"
+    ]
+  },
+  "sends_telemetry_event": false
+}
