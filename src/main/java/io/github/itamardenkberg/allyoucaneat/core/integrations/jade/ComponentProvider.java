@@ -17,29 +17,30 @@ import snownee.jade.api.ui.IElement;
 import snownee.jade.api.ui.IElementHelper;
 
 public enum ComponentProvider implements IBlockComponentProvider, IServerDataProvider<BlockAccessor> {
-	INSTANCE;
+    INSTANCE;
 
-	@Override
-	public ResourceLocation getUid() {
-		return JadePlugin.CHEESE_PROCESS_TIME;
-	}
+    @Override
+    public ResourceLocation getUid() {
+        return JadePlugin.CHEESE_PROCESS_TIME;
+    }
 
-	@Override
-	public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
-		if (accessor.getServerData().contains("Cheese Process Time")) {
-			IElementHelper elements = tooltip.getElementHelper();
-			IElement icon = elements.item(new ItemStack(Items.CLOCK), 0.5f).size(new Vec2(10, 10))
-					.translate(new Vec2(0, -1));
-			icon.message(null);
-			tooltip.add(icon);
-			tooltip.append(Component.translatable("jade." + AllYouCanEat.MOD_ID + ".cheese_process_time",
-					30 - (accessor.getServerData().getInt("Cheese Process Time") / 20)));
-		}
-	}
+    @Override
+    public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+        if (accessor.getServerData().contains("Cheese Process Time")) {
+            IElementHelper elements = tooltip.getElementHelper();
+            IElement icon = elements.item(new ItemStack(Items.CLOCK), 0.5f).size(new Vec2(10, 10))
+                    .translate(new Vec2(0, -1));
+            icon.message(null);
+            tooltip.add(icon);
+            tooltip.append(Component.translatable("jade." + AllYouCanEat.MOD_ID + ".cheese_process_time",
+					30 - (accessor.getServerData()
+                    .getInt("Cheese Process Time") / 20)));
+        }
+    }
 
-	@Override
-	public void appendServerData(CompoundTag data, BlockAccessor entity) {
-		MilkCauldronTileEntity cauldron = (MilkCauldronTileEntity) entity;
-		data.putInt("Cheese Process Time", cauldron.progress);
-	}
+    @Override
+    public void appendServerData(CompoundTag data, BlockAccessor entity) {
+        MilkCauldronTileEntity cauldron = (MilkCauldronTileEntity) entity.getBlockEntity();
+        data.putInt("Cheese Process Time", cauldron.progress);
+    }
 }
