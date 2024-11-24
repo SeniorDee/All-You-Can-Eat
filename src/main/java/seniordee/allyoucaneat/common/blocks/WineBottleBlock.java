@@ -2,7 +2,7 @@ package seniordee.allyoucaneat.common.blocks;
 
 import seniordee.allyoucaneat.core.init.BlockInit;
 import seniordee.allyoucaneat.core.init.BlockStatePropertiesInit;
-import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
+import seniordee.allyoucaneat.core.init.ItemInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

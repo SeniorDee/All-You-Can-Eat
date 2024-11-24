@@ -1,12 +1,5 @@
 package seniordee.allyoucaneat.datagen;
 
-import seniordee.allyoucaneat.AllYouCanEat;
-import seniordee.allyoucaneat.core.init.BlockInit;
-import seniordee.allyoucaneat.core.init.ItemInit;
-import seniordee.allyoucaneat.core.init.TagInit;
-import seniordee.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
-import seniordee.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
-import seniordee.allyoucaneat.datagen.integration.farmersdelight.FDBlockTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -16,6 +9,10 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.Nullable;
+import seniordee.allyoucaneat.AllYouCanEat;
+import seniordee.allyoucaneat.core.init.BlockInit;
+import seniordee.allyoucaneat.core.init.TagInit;
+import seniordee.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 
 import java.util.concurrent.CompletableFuture;
 

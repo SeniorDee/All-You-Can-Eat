@@ -1,8 +1,8 @@
-package io.github.itamardenkberg.allyoucaneat.world.features.tree;
+package seniordee.allyoucaneat.world.features.tree;
 
 import javax.annotation.Nullable;
 
-import io.github.itamardenkberg.allyoucaneat.world.features.ConfiguredFeaturesInit;
+import seniordee.allyoucaneat.world.features.ConfiguredFeaturesInit;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;

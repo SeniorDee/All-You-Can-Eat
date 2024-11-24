@@ -1,7 +1,7 @@
-package io.github.itamardenkberg.allyoucaneat.common.entities.vehicle;
+package seniordee.allyoucaneat.common.entities.vehicle;
 
-import io.github.itamardenkberg.allyoucaneat.core.init.EntityTypesInit;
-import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
+import seniordee.allyoucaneat.core.init.EntityTypesInit;
+import seniordee.allyoucaneat.core.init.ItemInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

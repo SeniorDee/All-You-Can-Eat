@@ -1,4 +1,4 @@
-package io.github.itamardenkberg.allyoucaneat.datagen.advancement;
+package seniordee.allyoucaneat.datagen.advancement;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -13,6 +13,6 @@ public class AdvancementProvider extends ForgeAdvancementProvider {
     public AdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries,
                                ExistingFileHelper existingFileHelper) {
         super(output, registries, existingFileHelper,
-                List.of(new io.github.itamardenkberg.allyoucaneat.datagen.advancement.AdvancementGenerator()));
+                List.of(new seniordee.allyoucaneat.datagen.advancement.AdvancementGenerator()));
     }
 }

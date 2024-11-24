@@ -1,10 +1,10 @@
-package io.github.itamardenkberg.allyoucaneat.common.tileentities;
+package seniordee.allyoucaneat.common.tileentities;
 
 import org.jetbrains.annotations.NotNull;
 
-import io.github.itamardenkberg.allyoucaneat.common.blocks.MilkCauldronBlock;
-import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
-import io.github.itamardenkberg.allyoucaneat.core.init.TileEntitiesInit;
+import seniordee.allyoucaneat.common.blocks.MilkCauldronBlock;
+import seniordee.allyoucaneat.core.init.ItemInit;
+import seniordee.allyoucaneat.core.init.TileEntitiesInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;

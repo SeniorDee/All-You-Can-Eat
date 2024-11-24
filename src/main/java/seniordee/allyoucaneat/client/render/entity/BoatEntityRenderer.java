@@ -1,14 +1,7 @@
-package io.github.itamardenkberg.allyoucaneat.client.render.entity;
-
-import java.util.Map;
-import java.util.stream.Stream;
+package seniordee.allyoucaneat.client.render.entity;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
-
-import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
-import io.github.itamardenkberg.allyoucaneat.common.entities.vehicle.BoatEntity;
-import io.github.itamardenkberg.allyoucaneat.common.entities.vehicle.ChestBoatEntity;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.ListModel;
@@ -18,6 +11,12 @@ import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.vehicle.Boat;
+import seniordee.allyoucaneat.AllYouCanEat;
+import seniordee.allyoucaneat.common.entities.vehicle.BoatEntity;
+import seniordee.allyoucaneat.common.entities.vehicle.ChestBoatEntity;
+
+import java.util.Map;
+import java.util.stream.Stream;
 
 public class BoatEntityRenderer extends BoatRenderer {
 	private final Map<BoatEntity.Type, Pair<ResourceLocation, ListModel<Boat>>> boatResources;

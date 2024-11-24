@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import seniordee.allyoucaneat.AllYouCanEat;
-import io.github.itamardenkberg.allyoucaneat.common.blocks.MilkCauldronBlock;
-import io.github.itamardenkberg.allyoucaneat.core.config.CommonConfig;
-import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
-import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
+import seniordee.allyoucaneat.common.blocks.MilkCauldronBlock;
+import seniordee.allyoucaneat.core.config.CommonConfig;
+import seniordee.allyoucaneat.core.init.BlockInit;
+import seniordee.allyoucaneat.core.init.ItemInit;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

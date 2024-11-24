@@ -1,8 +1,8 @@
-package io.github.itamardenkberg.allyoucaneat.core.integrations.jade;
+package seniordee.allyoucaneat.core.integrations.jade;
 
-import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
-import io.github.itamardenkberg.allyoucaneat.common.blocks.MilkCauldronBlock;
-import io.github.itamardenkberg.allyoucaneat.common.tileentities.MilkCauldronTileEntity;
+import seniordee.allyoucaneat.AllYouCanEat;
+import seniordee.allyoucaneat.common.blocks.MilkCauldronBlock;
+import seniordee.allyoucaneat.common.tileentities.MilkCauldronTileEntity;
 import net.minecraft.resources.ResourceLocation;
 import snownee.jade.api.IWailaClientRegistration;
 import snownee.jade.api.IWailaCommonRegistration;

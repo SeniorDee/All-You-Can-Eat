@@ -1,10 +1,5 @@
-package io.github.itamardenkberg.allyoucaneat.datagen.loot;
+package seniordee.allyoucaneat.datagen.loot;
 
-import io.github.itamardenkberg.allyoucaneat.common.blocks.*;
-import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
-import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
-import io.github.itamardenkberg.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
-import io.github.itamardenkberg.allyoucaneat.datagen.integration.farmersdelight.loot.FDBlockLootTables;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -24,9 +19,11 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.RegistryObject;
+import seniordee.allyoucaneat.common.blocks.*;
+import seniordee.allyoucaneat.core.init.BlockInit;
+import seniordee.allyoucaneat.core.init.ItemInit;
+import seniordee.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 

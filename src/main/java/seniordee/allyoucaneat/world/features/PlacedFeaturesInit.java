@@ -3,7 +3,7 @@ package seniordee.allyoucaneat.world.features;
 import java.util.List;
 
 import seniordee.allyoucaneat.AllYouCanEat;
-import io.github.itamardenkberg.allyoucaneat.core.init.BlockInit;
+import seniordee.allyoucaneat.core.init.BlockInit;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;

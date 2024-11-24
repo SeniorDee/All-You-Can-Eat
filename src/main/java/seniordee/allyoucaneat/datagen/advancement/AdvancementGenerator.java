@@ -1,8 +1,8 @@
-package io.github.itamardenkberg.allyoucaneat.datagen.advancement;
+package seniordee.allyoucaneat.datagen.advancement;
 
-import io.github.itamardenkberg.allyoucaneat.AllYouCanEat;
-import io.github.itamardenkberg.allyoucaneat.core.init.ItemInit;
-import io.github.itamardenkberg.allyoucaneat.core.init.TagInit;
+import seniordee.allyoucaneat.AllYouCanEat;
+import seniordee.allyoucaneat.core.init.ItemInit;
+import seniordee.allyoucaneat.core.init.TagInit;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;

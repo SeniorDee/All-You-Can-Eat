@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import seniordee.allyoucaneat.common.entities.vehicle.BoatEntity;
-import io.github.itamardenkberg.allyoucaneat.common.entities.vehicle.ChestBoatEntity;
+import seniordee.allyoucaneat.common.entities.vehicle.ChestBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
