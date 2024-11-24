@@ -1,6 +1,6 @@
 package io.github.itamardenkberg.allyoucaneat.common.blocks;
 
-import io.github.itamardenkberg.allyoucaneat.common.tileentities.SignBlockTileEntity;
+import io.github.itamardenkberg.allyoucaneat.common.tileentities.SignTileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,6 +14,6 @@ public class WallSignBlock extends net.minecraft.world.level.block.WallSignBlock
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new SignBlockTileEntity(pos, state);
+		return new SignTileEntity(pos, state);
 	}
 }

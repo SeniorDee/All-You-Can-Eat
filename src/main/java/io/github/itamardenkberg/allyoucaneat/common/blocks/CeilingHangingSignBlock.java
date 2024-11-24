@@ -1,0 +1,18 @@
+package io.github.itamardenkberg.allyoucaneat.common.blocks;
+
+import io.github.itamardenkberg.allyoucaneat.common.tileentities.HangingSignTileEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.WoodType;
+
+public class CeilingHangingSignBlock extends net.minecraft.world.level.block.CeilingHangingSignBlock {
+    public CeilingHangingSignBlock(Properties pProperties, WoodType pType) {
+        super(pProperties, pType);
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new HangingSignTileEntity(pos, state);
+    }
+}

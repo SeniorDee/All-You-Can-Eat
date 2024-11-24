@@ -110,6 +110,9 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
         signBlock((StandingSignBlock) BlockInit.HAZEL_SIGN.get(), (WallSignBlock) BlockInit.HAZEL_WALL_SIGN.get(),
                 blockTexture(BlockInit.HAZEL_PLANKS.get()));
 
+        hangingSignBlock(BlockInit.HAZEL_HANGING_SIGN.get(), BlockInit.HAZEL_WALL_HANGING_SIGN.get(),
+                blockTexture(BlockInit.HAZEL_PLANKS.get()));
+
         leavesBlock(BlockInit.HAZEL_LEAVES);
 
         saplingBlock(BlockInit.HAZEL_SAPLING);
@@ -155,6 +158,24 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
 
     private void blockWithItem(RegistryObject<Block> block) {
         simpleBlockWithItem(block.get(), cubeAll(block.get()));
+    }
+
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+        ModelFile sign = models().sign(name(signBlock), texture);
+        hangingSignBlock(signBlock, wallSignBlock, sign);
+    }
+
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ModelFile sign) {
+        simpleBlock(signBlock, sign);
+        simpleBlock(wallSignBlock, sign);
+    }
+
+    private String name(Block block) {
+        return key(block).getPath();
+    }
+
+    private ResourceLocation key(Block block) {
+        return ForgeRegistries.BLOCKS.getKey(block);
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {

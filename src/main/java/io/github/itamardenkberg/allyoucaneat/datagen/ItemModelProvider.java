@@ -61,6 +61,7 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleItem(ItemInit.WHITE_WINE_GLASS);
         simpleItem(ItemInit.WINE_GLASS);
         simpleItem(ItemInit.HAZEL_SIGN_ITEM);
+        simpleItem(ItemInit.HAZEL_HANGING_SIGN_ITEM);
 
         simpleBlockItem(BlockInit.PIZZA);
         simpleBlockItem(BlockInit.CHOCOLATE_CAKE);

@@ -106,6 +106,7 @@ public class ItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.PLANKS).add(ItemInit.HAZEL_PLANKS.get());
         this.tag(ItemTags.SAPLINGS).add(ItemInit.HAZEL_SAPLING.get());
         this.tag(ItemTags.SIGNS).add(ItemInit.HAZEL_SIGN_ITEM.get());
+        this.tag(ItemTags.HANGING_SIGNS).add(ItemInit.HAZEL_HANGING_SIGN_ITEM.get());
         this.tag(ItemTags.WOODEN_BUTTONS).add(ItemInit.HAZEL_BUTTON.get());
         this.tag(ItemTags.WOODEN_DOORS).add(ItemInit.HAZEL_DOOR.get());
         this.tag(ItemTags.WOODEN_FENCES).add(ItemInit.HAZEL_FENCE.get());

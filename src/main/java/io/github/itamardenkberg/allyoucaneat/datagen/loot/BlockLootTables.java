@@ -49,8 +49,6 @@ public class BlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BlockInit.HAZEL_PLANKS.get());
         this.dropSelf(BlockInit.HAZEL_PRESSURE_PLATE.get());
         this.dropSelf(BlockInit.HAZEL_SAPLING.get());
-        this.dropSelf(BlockInit.HAZEL_SIGN.get());
-        this.dropSelf(BlockInit.HAZEL_WALL_SIGN.get());
         this.dropSelf(BlockInit.HAZEL_SLAB.get());
         this.dropSelf(BlockInit.HAZEL_STAIRS.get());
         this.dropSelf(BlockInit.HAZEL_TRAPDOOR.get());
@@ -132,6 +130,13 @@ public class BlockLootTables extends BlockLootSubProvider {
         this.add(BlockInit.CHOCOLATE_CAKE.get(), noDrop());
         this.add(BlockInit.STRAWBERRY_CAKE.get(), noDrop());
         this.add(BlockInit.PIZZA.get(), noDrop());
+
+        this.add(BlockInit.HAZEL_SIGN.get(), block -> createSingleItemTable(ItemInit.HAZEL_SIGN_ITEM.get()));
+        this.add(BlockInit.HAZEL_WALL_SIGN.get(), block -> createSingleItemTable(ItemInit.HAZEL_SIGN_ITEM.get()));
+        this.add(BlockInit.HAZEL_HANGING_SIGN.get(),
+                block -> createSingleItemTable(ItemInit.HAZEL_HANGING_SIGN_ITEM.get()));
+        this.add(BlockInit.HAZEL_WALL_HANGING_SIGN.get(),
+                block -> createSingleItemTable(ItemInit.HAZEL_HANGING_SIGN_ITEM.get()));
 
         this.dropOther(BlockInit.MILK_CAULDRON.get(), Blocks.CAULDRON);
         this.dropOther(BlockInit.RED_WINE_CAULDRON.get(), Blocks.CAULDRON);

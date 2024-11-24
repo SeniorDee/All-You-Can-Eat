@@ -79,6 +79,8 @@ public class BlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(BlockInit.HAZEL_LOG.get());
         this.tag(BlockTags.MAINTAINS_FARMLAND).addTag(TagInit.Blocks.CROPS);
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockInit.BROWN_HAY_BLOCK.get());
+        this.tag(BlockTags.CEILING_HANGING_SIGNS).add(BlockInit.HAZEL_HANGING_SIGN.get());
+        this.tag(BlockTags.WALL_HANGING_SIGNS).add(BlockInit.HAZEL_WALL_HANGING_SIGN.get());
 
         // Serene Seasons
         if (ModList.get().isLoaded("sereneseasons")) {

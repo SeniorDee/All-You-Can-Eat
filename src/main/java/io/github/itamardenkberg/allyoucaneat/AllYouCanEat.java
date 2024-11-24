@@ -91,6 +91,7 @@ public class AllYouCanEat {
             event.accept(ItemInit.HAZEL_DOOR.get());
             event.accept(ItemInit.HAZEL_TRAPDOOR.get());
             event.accept(ItemInit.HAZEL_SIGN_ITEM.get());
+            event.accept(ItemInit.HAZEL_HANGING_SIGN_ITEM.get());
             event.accept(ItemInit.HAZEL_BOAT.get());
             event.accept(ItemInit.HAZEL_CHEST_BOAT.get());
             event.accept(ItemInit.HAZEL_LEAVES.get());

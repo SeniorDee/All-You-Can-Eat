@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.ItemStack;
@@ -41,7 +42,7 @@ public class ClientEventBusSubscriber {
 
         EntityRenderers.register(EntityTypesInit.BOAT_ENTITY.get(), context -> new BoatEntityRenderer(context, false));
         EntityRenderers.register(EntityTypesInit.CHEST_BOAT_ENTITY.get(), context -> new BoatEntityRenderer(context,
-				true));
+                true));
 
         WoodType.register(WoodTypesInit.HAZEL);
 
@@ -59,6 +60,8 @@ public class ClientEventBusSubscriber {
     @SubscribeEvent
     public static void registerTileEntityRenderers(RegisterRenderers event) {
         event.registerBlockEntityRenderer(TileEntitiesInit.SIGN_TILE_ENTITIES.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(TileEntitiesInit.HANGING_SIGN_TILE_ENTITIES.get(),
+                HangingSignRenderer::new);
     }
 
     @SuppressWarnings("deprecation")
@@ -66,7 +69,7 @@ public class ClientEventBusSubscriber {
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         event.getBlockColors().register((p_92626_, tint, pos, p_92629_) -> {
             return tint != null && pos != null ? BiomeColors.getAverageFoliageColor(tint, pos) :
-					FoliageColor.getHazelColor();
+                    FoliageColor.getHazelColor();
         }, BlockInit.HAZEL_LEAVES.get());
     }
 

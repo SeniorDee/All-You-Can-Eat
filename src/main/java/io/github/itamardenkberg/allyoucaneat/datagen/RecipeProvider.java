@@ -164,6 +164,8 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
 
         chestBoat(writer, ItemInit.HAZEL_CHEST_BOAT.get(), ItemInit.HAZEL_BOAT.get());
 
+        hangingSign(writer, ItemInit.HAZEL_HANGING_SIGN_ITEM.get(), BlockInit.STRIPPED_HAZEL_LOG.get());
+
         woodFromLogs(writer, BlockInit.HAZEL_WOOD.get(), BlockInit.HAZEL_LOG.get());
         woodFromLogs(writer, BlockInit.STRIPPED_HAZEL_WOOD.get(), BlockInit.STRIPPED_HAZEL_LOG.get());
 
