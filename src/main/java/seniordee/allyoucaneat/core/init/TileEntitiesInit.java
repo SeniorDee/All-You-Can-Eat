@@ -13,13 +13,15 @@ public class TileEntitiesInit {
 
     public static final RegistryObject<BlockEntityType<SignTileEntity>> SIGN_TILE_ENTITIES = BLOCK_ENTITES.register(
             "sign_block_entity", () -> BlockEntityType.Builder.of(SignTileEntity::new,
-                            BlockInit.HAZEL_WALL_SIGN.get(), BlockInit.HAZEL_SIGN.get())
+                            BlockInit.HAZEL_WALL_SIGN.get(), BlockInit.HAZEL_SIGN.get(),
+                            BlockInit.FIG_WALL_SIGN.get(), BlockInit.FIG_SIGN.get())
             .build(null));
 
     public static final RegistryObject<BlockEntityType<HangingSignTileEntity>> HANGING_SIGN_TILE_ENTITIES =
             BLOCK_ENTITES.register("hanging_sign_block_entity",
                     () -> BlockEntityType.Builder.of(HangingSignTileEntity::new,
-                                    BlockInit.HAZEL_WALL_HANGING_SIGN.get(), BlockInit.HAZEL_HANGING_SIGN.get())
+                                    BlockInit.HAZEL_WALL_HANGING_SIGN.get(), BlockInit.HAZEL_HANGING_SIGN.get(),
+                                    BlockInit.FIG_WALL_HANGING_SIGN.get(), BlockInit.FIG_HANGING_SIGN.get())
             .build(null));
 
     public static final RegistryObject<BlockEntityType<MilkCauldronTileEntity>> MILK_CAULDRON_TILE_ENTITY =

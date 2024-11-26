@@ -7,6 +7,7 @@ import seniordee.allyoucaneat.common.blocks.WallHangingSignBlock;
 import seniordee.allyoucaneat.common.blocks.WallSignBlock;
 import seniordee.allyoucaneat.common.blocks.*;
 import seniordee.allyoucaneat.core.util.CauldronInteractions;
+import seniordee.allyoucaneat.world.features.tree.FigTreeGrower;
 import seniordee.allyoucaneat.world.features.tree.HazelTreeGrower;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.*;
@@ -296,7 +297,7 @@ public class BlockInit {
             () -> new FlammableLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
     public static final RegistryObject<Block> FIG_SAPLING = BLOCKS.register("fig_sapling",
-            () -> new SaplingBlock(new HazelTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+            () -> new SaplingBlock(new FigTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> FIG_PLANKS = BLOCKS.register("fig_planks",
             () -> new FlammablePlankBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));

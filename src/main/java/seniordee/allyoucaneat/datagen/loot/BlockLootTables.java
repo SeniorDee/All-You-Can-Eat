@@ -159,9 +159,9 @@ public class BlockLootTables extends BlockLootSubProvider {
         this.dropOther(BlockInit.RED_WINE_CAULDRON.get(), Blocks.CAULDRON);
         this.dropOther(BlockInit.WHITE_WINE_CAULDRON.get(), Blocks.CAULDRON);
 
-        this.add(BlockInit.HAZEL_LEAVES.get(), (block) -> this.createHazelLeavesDrops(block, Blocks.OAK_SAPLING,
-                NORMAL_LEAVES_SAPLING_CHANCES));
-        this.add(BlockInit.FIG_LEAVES.get(), (block) -> this.createFigLeavesDrops(block, Blocks.OAK_SAPLING,
+        this.add(BlockInit.HAZEL_LEAVES.get(), (block) -> this.createHazelLeavesDrops(block,
+                BlockInit.HAZEL_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(BlockInit.FIG_LEAVES.get(), (block) -> this.createFigLeavesDrops(block, BlockInit.FIG_SAPLING.get(),
                 NORMAL_LEAVES_SAPLING_CHANCES));
 
         // Farmer's Delight
@@ -177,19 +177,18 @@ public class BlockLootTables extends BlockLootSubProvider {
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(age, value));
     }
 
-    protected LootTable.Builder createHazelLeavesDrops(Block pOakLeavesBlock, Block pSaplingBlock, float... pChances) {
-        return this.createLeavesDrops(pOakLeavesBlock, pSaplingBlock, pChances)
+    protected LootTable.Builder createHazelLeavesDrops(Block leaves, Block pSaplingBlock, float... pChances) {
+        return this.createLeavesDrops(leaves, pSaplingBlock, pChances)
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
-                        .add(this.applyExplosionCondition(pOakLeavesBlock,
-                                        LootItem.lootTableItem(ItemInit.HAZELNUT.get()))
+                        .add(this.applyExplosionCondition(leaves, LootItem.lootTableItem(ItemInit.HAZELNUT.get()))
                                 .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
                                         0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
     }
 
-    protected LootTable.Builder createFigLeavesDrops(Block pOakLeavesBlock, Block pSaplingBlock, float... pChances) {
-        return this.createLeavesDrops(pOakLeavesBlock, pSaplingBlock, pChances)
+    protected LootTable.Builder createFigLeavesDrops(Block leaves, Block pSaplingBlock, float... pChances) {
+        return this.createLeavesDrops(leaves, pSaplingBlock, pChances)
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
-                        .add(this.applyExplosionCondition(pOakLeavesBlock, LootItem.lootTableItem(ItemInit.FIG.get()))
+                        .add(this.applyExplosionCondition(leaves, LootItem.lootTableItem(ItemInit.FIG.get()))
                                 .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
                                         0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
     }
