@@ -21,6 +21,8 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import seniordee.allyoucaneat.world.features.tree.custom.FigFoliagePlacer;
+import seniordee.allyoucaneat.world.features.tree.custom.FigTrunkPlacer;
 
 public class ConfiguredFeaturesInit {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HAZEL_KEY = registerKey("hazel");
@@ -37,9 +39,9 @@ public class ConfiguredFeaturesInit {
 
         register(context, FIG_KEY, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BlockInit.FIG_LOG.get()),
-                        new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.simple(BlockInit.FIG_LEAVES.get()),
-                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0
-                        , 1)).ignoreVines()
+                        new FigTrunkPlacer(4, 2, 0), BlockStateProvider.simple(BlockInit.FIG_LEAVES.get()),
+                        new FigFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0,
+                        1)).ignoreVines()
                 .build());
 
         register(context, STRAWBERRY_BUSH_KEY, Feature.FLOWER, new RandomPatchConfiguration(32, 6, 2,

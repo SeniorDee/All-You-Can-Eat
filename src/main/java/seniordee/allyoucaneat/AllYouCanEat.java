@@ -1,18 +1,11 @@
 package seniordee.allyoucaneat;
 
+import seniordee.allyoucaneat.core.init.*;
 import seniordee.allyoucaneat.core.integrations.farmersdelight.init.FDBlockInit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import seniordee.allyoucaneat.core.config.CommonConfig;
-import seniordee.allyoucaneat.core.init.BlockInit;
-import seniordee.allyoucaneat.core.init.CreativeTabInit;
-import seniordee.allyoucaneat.core.init.EffectsInit;
-import seniordee.allyoucaneat.core.init.EntityTypesInit;
-import seniordee.allyoucaneat.core.init.FluidInit;
-import seniordee.allyoucaneat.core.init.FluidTypesInit;
-import seniordee.allyoucaneat.core.init.ItemInit;
-import seniordee.allyoucaneat.core.init.TileEntitiesInit;
 import seniordee.allyoucaneat.core.integrations.farmersdelight.init.FDItemInit;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -42,6 +35,8 @@ public class AllYouCanEat {
         FluidTypesInit.FLUID_TYPES.register(bus);
         EffectsInit.EFFECT.register(bus);
         CreativeTabInit.CREATIVE_MODE_TABS.register(bus);
+        TrunkPlacerInit.TRUNK_PLACER.register(bus);
+        FoliagePlacerInit.FOLIAGE_PLACER.register(bus);
 
         if (ModList.get().isLoaded("farmersdelight")) {
             FDItemInit.ITEMS.register(bus);
