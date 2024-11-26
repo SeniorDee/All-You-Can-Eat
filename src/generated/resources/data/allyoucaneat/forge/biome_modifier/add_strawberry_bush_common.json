@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#forge:is_plains",
+  "biomes": [],
   "features": "allyoucaneat:patch_strawberry_bush_common",
   "step": "vegetal_decoration"
 }

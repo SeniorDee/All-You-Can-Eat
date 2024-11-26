@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "fd_cabinet",
+  "key": {
+    "D": {
+      "item": "allyoucaneat:fig_trapdoor"
+    },
+    "_": {
+      "item": "allyoucaneat:fig_slab"
+    }
+  },
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "result": {
+    "item": "allyoucaneat:fig_cabinet"
+  },
+  "show_notification": true
+}

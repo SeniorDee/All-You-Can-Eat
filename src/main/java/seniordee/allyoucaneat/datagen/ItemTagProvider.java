@@ -33,6 +33,9 @@ public class ItemTagProvider extends ItemTagsProvider {
         this.tag(TagInit.Items.HAZEL_LOGS)
                 .add(ItemInit.HAZEL_LOG.get(), ItemInit.STRIPPED_HAZEL_LOG.get(), ItemInit.HAZEL_WOOD.get(),
                         ItemInit.STRIPPED_HAZEL_WOOD.get());
+        this.tag(TagInit.Items.FIG_LOGS)
+                .add(ItemInit.FIG_LOG.get(), ItemInit.STRIPPED_FIG_LOG.get(), ItemInit.FIG_WOOD.get(),
+                        ItemInit.STRIPPED_FIG_WOOD.get());
 
         // Forge
         this.tag(TagInit.Items.CROPS_BROWN_WHEAT).add(ItemInit.BROWN_WHEAT.get());
@@ -45,6 +48,7 @@ public class ItemTagProvider extends ItemTagsProvider {
         this.tag(TagInit.Items.FRUITS_GRAPES).addTag(TagInit.Items.FRUITS_BLACK_GRAPES)
                 .addTag(TagInit.Items.FRUITS_WHITE_GRAPES);
         this.tag(TagInit.Items.FRUITS_HAZELNUTS).add(ItemInit.HAZELNUT.get());
+        this.tag(TagInit.Items.FRUITS_FIGS).add(ItemInit.FIG.get());
         this.tag(TagInit.Items.FRUITS_STRAWBERRIES).add(ItemInit.STRAWBERRY.get());
         this.tag(TagInit.Items.FRUITS_WHITE_GRAPES).add(ItemInit.WHITE_GRAPE.get());
         this.tag(TagInit.Items.SEEDS_BROWN_WHEAT).add(ItemInit.BROWN_WHEAT_SEEDS.get());
@@ -82,8 +86,8 @@ public class ItemTagProvider extends ItemTagsProvider {
                 .addTag(TagInit.Items.FRUITS_GRAPES);
         this.tag(TagInit.Items.RAISINS).add(ItemInit.RAISINS.get());
         this.tag(TagInit.Items.GRAIN).addTag(TagInit.Items.BROWN_WHEAT);
-        this.tag(Tags.Items.FENCE_GATES_WOODEN).add(ItemInit.HAZEL_FENCE_GATE.get());
-        this.tag(Tags.Items.FENCE_GATES).add(ItemInit.HAZEL_FENCE_GATE.get());
+        this.tag(Tags.Items.FENCE_GATES_WOODEN).add(ItemInit.HAZEL_FENCE_GATE.get(), ItemInit.FIG_FENCE_GATE.get());
+        this.tag(Tags.Items.FENCE_GATES).add(ItemInit.HAZEL_FENCE_GATE.get(), ItemInit.FIG_FENCE_GATE.get());
         this.tag(TagInit.Items.MILK_BOTTLE).add(ItemInit.MILK_BOTTLE.get());
         this.tag(TagInit.Items.MILK_BUCKET).add(Items.MILK_BUCKET);
         this.tag(TagInit.Items.COOKED_BEEF).add(Items.COOKED_BEEF);
@@ -96,26 +100,30 @@ public class ItemTagProvider extends ItemTagsProvider {
                         ItemInit.CHORUS_CHOCOLATE_COVERED_STRAWBERRY.get());
 
         // Minecraft
-        this.tag(ItemTags.BOATS).add(ItemInit.HAZEL_BOAT.get(), ItemInit.HAZEL_CHEST_BOAT.get());
-        this.tag(ItemTags.FENCE_GATES).add(ItemInit.HAZEL_FENCE_GATE.get());
-        this.tag(ItemTags.FENCES).add(ItemInit.HAZEL_FENCE.get());
-        this.tag(ItemTags.LEAVES).add(ItemInit.HAZEL_LEAVES.get());
-        this.tag(ItemTags.LOGS).addTag(TagInit.Items.HAZEL_LOGS);
-        this.tag(ItemTags.LOGS_THAT_BURN).addTag(TagInit.Items.HAZEL_LOGS);
-        this.tag(ItemTags.PLANKS).add(ItemInit.HAZEL_PLANKS.get());
-        this.tag(ItemTags.SAPLINGS).add(ItemInit.HAZEL_SAPLING.get());
-        this.tag(ItemTags.SIGNS).add(ItemInit.HAZEL_SIGN_ITEM.get());
-        this.tag(ItemTags.HANGING_SIGNS).add(ItemInit.HAZEL_HANGING_SIGN_ITEM.get());
-        this.tag(ItemTags.WOODEN_BUTTONS).add(ItemInit.HAZEL_BUTTON.get());
-        this.tag(ItemTags.WOODEN_DOORS).add(ItemInit.HAZEL_DOOR.get());
-        this.tag(ItemTags.WOODEN_FENCES).add(ItemInit.HAZEL_FENCE.get());
-        this.tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ItemInit.HAZEL_PRESSURE_PLATE.get());
-        this.tag(ItemTags.WOODEN_SLABS).add(ItemInit.HAZEL_SLAB.get());
-        this.tag(ItemTags.WOODEN_STAIRS).add(ItemInit.HAZEL_STAIRS.get());
-        this.tag(ItemTags.WOODEN_TRAPDOORS).add(ItemInit.HAZEL_TRAPDOOR.get());
+        this.tag(ItemTags.BOATS)
+                .add(ItemInit.HAZEL_BOAT.get(), ItemInit.HAZEL_CHEST_BOAT.get(), ItemInit.FIG_BOAT.get(),
+                        ItemInit.FIG_CHEST_BOAT.get());
+        this.tag(ItemTags.FENCE_GATES).add(ItemInit.HAZEL_FENCE_GATE.get(), ItemInit.FIG_FENCE_GATE.get());
+        this.tag(ItemTags.FENCES).add(ItemInit.HAZEL_FENCE.get(), ItemInit.FIG_FENCE.get());
+        this.tag(ItemTags.LEAVES).add(ItemInit.HAZEL_LEAVES.get(), ItemInit.FIG_LEAVES.get());
+        this.tag(ItemTags.LOGS).addTag(TagInit.Items.HAZEL_LOGS).addTag(TagInit.Items.FIG_LOGS);
+        this.tag(ItemTags.LOGS_THAT_BURN).addTag(TagInit.Items.HAZEL_LOGS).addTag(TagInit.Items.FIG_LOGS);
+        this.tag(ItemTags.PLANKS).add(ItemInit.HAZEL_PLANKS.get(), ItemInit.FIG_PLANKS.get());
+        this.tag(ItemTags.SAPLINGS).add(ItemInit.HAZEL_SAPLING.get(), ItemInit.FIG_SAPLING.get());
+        this.tag(ItemTags.SIGNS).add(ItemInit.HAZEL_SIGN_ITEM.get(), ItemInit.FIG_SIGN_ITEM.get());
+        this.tag(ItemTags.HANGING_SIGNS)
+                .add(ItemInit.HAZEL_HANGING_SIGN_ITEM.get(), ItemInit.FIG_HANGING_SIGN_ITEM.get());
+        this.tag(ItemTags.WOODEN_BUTTONS).add(ItemInit.HAZEL_BUTTON.get(), ItemInit.FIG_BUTTON.get());
+        this.tag(ItemTags.WOODEN_DOORS).add(ItemInit.HAZEL_DOOR.get(), ItemInit.FIG_DOOR.get());
+        this.tag(ItemTags.WOODEN_FENCES).add(ItemInit.HAZEL_FENCE.get(), ItemInit.FIG_FENCE.get());
+        this.tag(ItemTags.WOODEN_PRESSURE_PLATES)
+                .add(ItemInit.HAZEL_PRESSURE_PLATE.get(), ItemInit.FIG_PRESSURE_PLATE.get());
+        this.tag(ItemTags.WOODEN_SLABS).add(ItemInit.HAZEL_SLAB.get(), ItemInit.FIG_SLAB.get());
+        this.tag(ItemTags.WOODEN_STAIRS).add(ItemInit.HAZEL_STAIRS.get(), ItemInit.FIG_STAIRS.get());
+        this.tag(ItemTags.WOODEN_TRAPDOORS).add(ItemInit.HAZEL_TRAPDOOR.get(), ItemInit.FIG_TRAPDOOR.get());
         this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).addTag(TagInit.Items.SEEDS_TOMATO)
                 .addTag(TagInit.Items.SEEDS_BROWN_WHEAT);
-        this.tag(ItemTags.FOX_FOOD).addTag(TagInit.Items.FRUITS_STRAWBERRIES);
+        this.tag(ItemTags.FOX_FOOD).addTag(TagInit.Items.FRUITS_STRAWBERRIES).addTag(TagInit.Items.FRUITS_FIGS);
 
         // Serene Seasons
         if (ModList.get().isLoaded("sereneseasons")) {
@@ -125,12 +133,13 @@ public class ItemTagProvider extends ItemTagsProvider {
             this.tag(TagInit.Items.SUMMER_CROPS)
                     .add(ItemInit.BLACK_GRAPE_SEEDS.get(), ItemInit.WHITE_GRAPE_SEEDS.get(),
                             ItemInit.HAZEL_SAPLING.get(), ItemInit.BROWN_WHEAT_SEEDS.get(),
-                            ItemInit.TOMATO_SEEDS.get(), ItemInit.STRAWBERRY.get());
+                            ItemInit.TOMATO_SEEDS.get(), ItemInit.STRAWBERRY.get(), ItemInit.FIG_SAPLING.get());
+            this.tag(TagInit.Items.SPRING_CROPS).add(ItemInit.FIG_SAPLING.get());
         }
 
         // Farmer's Delight
         if (ModList.get().isLoaded("farmersdelight")) {
-            this.tag(ModTags.WOODEN_CABINETS).add(FDItemInit.HAZEL_CABINET.get());
+            this.tag(ModTags.WOODEN_CABINETS).add(FDItemInit.HAZEL_CABINET.get(), FDItemInit.FIG_CABINET.get());
         }
     }
 }

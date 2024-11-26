@@ -16,12 +16,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
 
-	public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-			.add(Registries.CONFIGURED_FEATURE, ConfiguredFeaturesInit::bootstrap)
-			.add(Registries.PLACED_FEATURE, PlacedFeaturesInit::bootstrap)
-			.add(ForgeRegistries.Keys.BIOME_MODIFIERS, BiomeModifiersInit::bootstrap);
+    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(Registries.CONFIGURED_FEATURE,
+					ConfiguredFeaturesInit::bootstrap)
+            .add(Registries.PLACED_FEATURE, PlacedFeaturesInit::bootstrap)
+            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, BiomeModifiersInit::bootstrap);
 
-	public WorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-		super(output, registries, BUILDER, Set.of(AllYouCanEat.MOD_ID));
-	}
+    public WorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(output, registries, BUILDER, Set.of(AllYouCanEat.MOD_ID));
+    }
 }

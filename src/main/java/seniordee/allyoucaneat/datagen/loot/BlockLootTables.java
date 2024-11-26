@@ -55,6 +55,20 @@ public class BlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BlockInit.RED_WINE_BOTTLE.get());
         this.dropSelf(BlockInit.WHITE_WINE_BOTTLE.get());
         this.dropSelf(BlockInit.WINE_BOTTLE.get());
+        this.dropSelf(BlockInit.FIG_BUTTON.get());
+        this.dropSelf(BlockInit.FIG_DOOR.get());
+        this.dropSelf(BlockInit.FIG_FENCE.get());
+        this.dropSelf(BlockInit.FIG_FENCE_GATE.get());
+        this.dropSelf(BlockInit.FIG_LOG.get());
+        this.dropSelf(BlockInit.FIG_PLANKS.get());
+        this.dropSelf(BlockInit.FIG_PRESSURE_PLATE.get());
+        this.dropSelf(BlockInit.FIG_SAPLING.get());
+        this.dropSelf(BlockInit.FIG_SLAB.get());
+        this.dropSelf(BlockInit.FIG_STAIRS.get());
+        this.dropSelf(BlockInit.FIG_TRAPDOOR.get());
+        this.dropSelf(BlockInit.FIG_WOOD.get());
+        this.dropSelf(BlockInit.STRIPPED_FIG_LOG.get());
+        this.dropSelf(BlockInit.STRIPPED_FIG_WOOD.get());
 
         this.add(BlockInit.CANDLE_CHOCOLATE_CAKE.get(), createCandleCakeDrops(Blocks.CANDLE));
         this.add(BlockInit.BLACK_CANDLE_CHOCOLATE_CAKE.get(), createCandleCakeDrops(Blocks.BLACK_CANDLE));
@@ -134,6 +148,12 @@ public class BlockLootTables extends BlockLootSubProvider {
                 block -> createSingleItemTable(ItemInit.HAZEL_HANGING_SIGN_ITEM.get()));
         this.add(BlockInit.HAZEL_WALL_HANGING_SIGN.get(),
                 block -> createSingleItemTable(ItemInit.HAZEL_HANGING_SIGN_ITEM.get()));
+        this.add(BlockInit.FIG_SIGN.get(), block -> createSingleItemTable(ItemInit.FIG_SIGN_ITEM.get()));
+        this.add(BlockInit.FIG_WALL_SIGN.get(), block -> createSingleItemTable(ItemInit.FIG_SIGN_ITEM.get()));
+        this.add(BlockInit.FIG_HANGING_SIGN.get(),
+                block -> createSingleItemTable(ItemInit.FIG_HANGING_SIGN_ITEM.get()));
+        this.add(BlockInit.FIG_WALL_HANGING_SIGN.get(),
+                block -> createSingleItemTable(ItemInit.FIG_HANGING_SIGN_ITEM.get()));
 
         this.dropOther(BlockInit.MILK_CAULDRON.get(), Blocks.CAULDRON);
         this.dropOther(BlockInit.RED_WINE_CAULDRON.get(), Blocks.CAULDRON);
@@ -141,10 +161,13 @@ public class BlockLootTables extends BlockLootSubProvider {
 
         this.add(BlockInit.HAZEL_LEAVES.get(), (block) -> this.createHazelLeavesDrops(block, Blocks.OAK_SAPLING,
                 NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(BlockInit.FIG_LEAVES.get(), (block) -> this.createFigLeavesDrops(block, Blocks.OAK_SAPLING,
+                NORMAL_LEAVES_SAPLING_CHANCES));
 
         // Farmer's Delight
         if (ModList.get().isLoaded("farmersdelight")) {
             this.add(FDBlockInit.HAZEL_CABINET.get(), this::createNameableBlockEntityTable);
+            this.add(FDBlockInit.FIG_CABINET.get(), this::createNameableBlockEntityTable);
         }
     }
 
@@ -159,6 +182,14 @@ public class BlockLootTables extends BlockLootSubProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
                         .add(this.applyExplosionCondition(pOakLeavesBlock,
                                         LootItem.lootTableItem(ItemInit.HAZELNUT.get()))
+                                .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
+                                        0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
+    }
+
+    protected LootTable.Builder createFigLeavesDrops(Block pOakLeavesBlock, Block pSaplingBlock, float... pChances) {
+        return this.createLeavesDrops(pOakLeavesBlock, pSaplingBlock, pChances)
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)
+                        .add(this.applyExplosionCondition(pOakLeavesBlock, LootItem.lootTableItem(ItemInit.FIG.get()))
                                 .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
                                         0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
     }

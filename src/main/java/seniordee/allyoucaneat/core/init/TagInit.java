@@ -16,6 +16,7 @@ public class TagInit {
         // ACYE
         public static final TagKey<Block> CROPS = register("crops");
         public static final TagKey<Block> HAZEL_LOGS = register("hazel_logs");
+        public static final TagKey<Block> FIG_LOGS = register("fig_logs");
 
         // Forge
         public static final TagKey<Block> BRICKS = registerForge("bricks");
@@ -23,6 +24,7 @@ public class TagInit {
         // Serene Seasons
         public static final TagKey<Block> AUTUMN_CROPS = registerSereneSeasons("autumn_crops");
         public static final TagKey<Block> SUMMER_CROPS = registerSereneSeasons("summer_crops");
+        public static final TagKey<Block> SPRING_CROPS = registerSereneSeasons("springs_crops");
 
         private static TagKey<Block> register(String name) {
             return BlockTags.create(new ResourceLocation(AllYouCanEat.MOD_ID, name));
@@ -40,6 +42,7 @@ public class TagInit {
     public static class Items {
         // AYCE
         public static final TagKey<Item> HAZEL_LOGS = register("hazel_logs");
+        public static final TagKey<Item> FIG_LOGS = register("fig_logs");
         public static final TagKey<Item> CHOCOLATE_COVERED_STRAWBERRIES = register("chocolate_covered_strawberries");
 
         // Forge
@@ -47,6 +50,7 @@ public class TagInit {
         public static final TagKey<Item> FRUITS_BLACK_GRAPES = registerForge("fruits/black_grapes");
         public static final TagKey<Item> FRUITS_WHITE_GRAPES = registerForge("fruits/white_grapes");
         public static final TagKey<Item> FRUITS_HAZELNUTS = registerForge("fruits/hazelnuts");
+        public static final TagKey<Item> FRUITS_FIGS = registerForge("fruits/figs");
         public static final TagKey<Item> SEEDS_GRAPE = registerForge("seeds/grape");
         public static final TagKey<Item> FOODS = registerForge("foods");
         public static final TagKey<Item> FRUITS = registerForge("fruits");
@@ -84,6 +88,7 @@ public class TagInit {
         // Serene Seasons
         public static final TagKey<Item> AUTUMN_CROPS = registerSereneSeasons("autumn_crops");
         public static final TagKey<Item> SUMMER_CROPS = registerSereneSeasons("summer_crops");
+        public static final TagKey<Item> SPRING_CROPS = registerSereneSeasons("spring_crops");
 
         private static TagKey<Item> register(String name) {
             return ItemTags.create(new ResourceLocation(AllYouCanEat.MOD_ID, name));

@@ -24,6 +24,14 @@ public class BlockFamiliesGenerator extends BlockFamilies {
             .trapdoor(BlockInit.HAZEL_TRAPDOOR.get()).recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks")
             .getFamily();
 
+    public static final BlockFamily FIG_PLANKS =
+            familyBuilder(BlockInit.FIG_PLANKS.get()).button(BlockInit.FIG_BUTTON.get())
+            .fence(BlockInit.FIG_FENCE.get()).fenceGate(BlockInit.FIG_FENCE_GATE.get())
+            .pressurePlate(BlockInit.FIG_PRESSURE_PLATE.get())
+            .sign(BlockInit.FIG_SIGN.get(), BlockInit.FIG_WALL_SIGN.get()).slab(BlockInit.FIG_SLAB.get())
+            .stairs(BlockInit.FIG_STAIRS.get()).door(BlockInit.FIG_DOOR.get()).trapdoor(BlockInit.FIG_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden").recipeUnlockedBy("has_planks").getFamily();
+
     private static BlockFamily.Builder familyBuilder(Block pBaseBlock) {
         BlockFamily.Builder blockfamily$builder = new BlockFamily.Builder(pBaseBlock);
         BlockFamily blockfamily = MAP.put(pBaseBlock, blockfamily$builder.getFamily());

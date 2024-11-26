@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "allyoucaneat:block/integration/farmersdelight/fig_cabinet_front",
+    "side": "allyoucaneat:block/integration/farmersdelight/fig_cabinet_side",
+    "top": "allyoucaneat:block/integration/farmersdelight/fig_cabinet_top"
+  }
+}

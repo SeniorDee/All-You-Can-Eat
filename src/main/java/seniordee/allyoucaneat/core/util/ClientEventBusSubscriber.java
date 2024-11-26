@@ -45,9 +45,11 @@ public class ClientEventBusSubscriber {
                 true));
 
         WoodType.register(WoodTypesInit.HAZEL);
+        WoodType.register(WoodTypesInit.FIG);
 
         event.enqueueWork(() -> {
             Sheets.addWoodType(WoodTypesInit.HAZEL);
+            Sheets.addWoodType(WoodTypesInit.FIG);
         });
     }
 
@@ -55,13 +57,14 @@ public class ClientEventBusSubscriber {
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModelLayerInit.HAZEL_BOAT_LAYER, BoatModel::createBodyModel);
         event.registerLayerDefinition(ModelLayerInit.HAZEL_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        event.registerLayerDefinition(ModelLayerInit.FIG_BOAT_LAYER, BoatModel::createBodyModel);
+        event.registerLayerDefinition(ModelLayerInit.FIG_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
     }
 
     @SubscribeEvent
     public static void registerTileEntityRenderers(RegisterRenderers event) {
         event.registerBlockEntityRenderer(TileEntitiesInit.SIGN_TILE_ENTITIES.get(), SignRenderer::new);
-        event.registerBlockEntityRenderer(TileEntitiesInit.HANGING_SIGN_TILE_ENTITIES.get(),
-                HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(TileEntitiesInit.HANGING_SIGN_TILE_ENTITIES.get(), HangingSignRenderer::new);
     }
 
     @SuppressWarnings("deprecation")
@@ -71,18 +74,30 @@ public class ClientEventBusSubscriber {
             return tint != null && pos != null ? BiomeColors.getAverageFoliageColor(tint, pos) :
                     FoliageColor.getHazelColor();
         }, BlockInit.HAZEL_LEAVES.get());
+        event.getBlockColors().register((p_92626_, tint, pos, p_92629_) -> {
+            return tint != null && pos != null ? BiomeColors.getAverageFoliageColor(tint, pos) :
+                    FoliageColor.getFigColor();
+        }, BlockInit.FIG_LEAVES.get());
     }
 
     @SuppressWarnings("deprecation")
     @SubscribeEvent
     public static void onItemColors(RegisterColorHandlersEvent.Item event) {
         event.getItemColors().register(new HazelLeaveColor(), BlockInit.HAZEL_LEAVES.get().asItem());
+        event.getItemColors().register(new FigLeaveColor(), BlockInit.FIG_LEAVES.get().asItem());
     }
 
     public static class HazelLeaveColor implements ItemColor {
         @Override
         public int getColor(ItemStack stack, int color) {
             return FoliageColor.getHazelColor();
+        }
+    }
+
+    public static class FigLeaveColor implements ItemColor {
+        @Override
+        public int getColor(ItemStack stack, int color) {
+            return FoliageColor.getFigColor();
         }
     }
 }

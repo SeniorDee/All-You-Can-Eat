@@ -26,4 +26,7 @@ public class FDItemInit {
     // Blocks
     public static final RegistryObject<BlockItem> HAZEL_CABINET = ITEMS.register("hazel_cabinet",
             () -> new BlockItem(FDBlockInit.HAZEL_CABINET.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_CABINET = ITEMS.register("fig_cabinet",
+            () -> new BlockItem(FDBlockInit.FIG_CABINET.get(), new Item.Properties()));
 }

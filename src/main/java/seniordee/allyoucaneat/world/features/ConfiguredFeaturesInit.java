@@ -25,11 +25,19 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 public class ConfiguredFeaturesInit {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HAZEL_KEY = registerKey("hazel");
     public static final ResourceKey<ConfiguredFeature<?, ?>> STRAWBERRY_BUSH_KEY = registerKey("strawberry_bush");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FIG_KEY = registerKey("fig");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         register(context, HAZEL_KEY, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BlockInit.HAZEL_LOG.get()),
                         new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.simple(BlockInit.HAZEL_LEAVES.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0
+                        , 1)).ignoreVines()
+                .build());
+
+        register(context, FIG_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BlockInit.FIG_LOG.get()),
+                        new StraightTrunkPlacer(4, 2, 0), BlockStateProvider.simple(BlockInit.FIG_LEAVES.get()),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0
                         , 1)).ignoreVines()
                 .build());

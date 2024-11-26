@@ -17,4 +17,7 @@ public class FDBlockInit {
 
     public static final RegistryObject<Block> HAZEL_CABINET = BLOCKS.register("hazel_cabinet",
             () -> new CabinetBlock(BlockBehaviour.Properties.copy(ModBlocks.OAK_CABINET.get())));
+
+    public static final RegistryObject<Block> FIG_CABINET = BLOCKS.register("fig_cabinet",
+            () -> new CabinetBlock(BlockBehaviour.Properties.copy(ModBlocks.OAK_CABINET.get())));
 }

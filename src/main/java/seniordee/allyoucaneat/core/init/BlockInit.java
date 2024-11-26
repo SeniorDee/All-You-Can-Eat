@@ -279,4 +279,66 @@ public class BlockInit {
     public static final RegistryObject<LiquidBlock> WHITE_WINE_BLOCK = BLOCKS.register("white_wine_block",
             () -> new LiquidBlock(FluidInit.SOURCE_WHITE_WINE, BlockBehaviour.Properties.copy(Blocks.WATER)
             .noLootTable()));
+
+    public static final RegistryObject<Block> FIG_LOG = BLOCKS.register("fig_log",
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+
+    public static final RegistryObject<Block> FIG_WOOD = BLOCKS.register("fig_wood",
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+
+    public static final RegistryObject<Block> STRIPPED_FIG_LOG = BLOCKS.register("stripped_fig_log",
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final RegistryObject<Block> STRIPPED_FIG_WOOD = BLOCKS.register("stripped_fig_wood",
+            () -> new FlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final RegistryObject<Block> FIG_LEAVES = BLOCKS.register("fig_leaves",
+            () -> new FlammableLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> FIG_SAPLING = BLOCKS.register("fig_sapling",
+            () -> new SaplingBlock(new HazelTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> FIG_PLANKS = BLOCKS.register("fig_planks",
+            () -> new FlammablePlankBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> FIG_SLAB = BLOCKS.register("fig_slab",
+            () -> new FlammableSlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+
+    public static final RegistryObject<Block> FIG_STAIRS = BLOCKS.register("fig_stairs",
+            () -> new FlammableStairBlock(() -> FIG_PLANKS.get()
+            .defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+
+    public static final RegistryObject<Block> FIG_BUTTON = BLOCKS.register("fig_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
+
+    public static final RegistryObject<Block> FIG_PRESSURE_PLATE = BLOCKS.register("fig_pressure_plate",
+            () -> new PressurePlateBlock(Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> FIG_FENCE = BLOCKS.register("fig_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+
+    public static final RegistryObject<Block> FIG_FENCE_GATE = BLOCKS.register("fig_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE),
+                    SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+
+    public static final RegistryObject<Block> FIG_DOOR = BLOCKS.register("fig_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> FIG_TRAPDOOR = BLOCKS.register("fig_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> FIG_SIGN = BLOCKS.register("fig_sign",
+            () -> new StandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), WoodTypesInit.FIG));
+
+    public static final RegistryObject<Block> FIG_WALL_SIGN = BLOCKS.register("fig_wall_sign",
+            () -> new WallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), WoodTypesInit.FIG));
+
+    public static final RegistryObject<Block> FIG_HANGING_SIGN = BLOCKS.register("fig_hanging_sign",
+            () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN),
+                    WoodTypesInit.FIG));
+
+    public static final RegistryObject<Block> FIG_WALL_HANGING_SIGN = BLOCKS.register("fig_wall_hanging_sign",
+            () -> new WallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN),
+                    WoodTypesInit.FIG));
 }

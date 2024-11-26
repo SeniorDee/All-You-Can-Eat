@@ -63,6 +63,11 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleItem(ItemInit.WINE_GLASS);
         simpleItem(ItemInit.HAZEL_SIGN_ITEM);
         simpleItem(ItemInit.HAZEL_HANGING_SIGN_ITEM);
+        simpleItem(ItemInit.FIG_BOAT);
+        simpleItem(ItemInit.FIG_CHEST_BOAT);
+        simpleItem(ItemInit.FIG);
+        simpleItem(ItemInit.FIG_SIGN_ITEM);
+        simpleItem(ItemInit.FIG_HANGING_SIGN_ITEM);
 
         simpleBlockItem(BlockInit.PIZZA);
         simpleBlockItem(BlockInit.CHOCOLATE_CAKE);
@@ -71,19 +76,28 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         simpleBlockItem(BlockInit.RED_WINE_BOTTLE);
         simpleBlockItem(BlockInit.WHITE_WINE_BOTTLE);
         simpleBlockItem(BlockInit.WINE_BOTTLE);
+        simpleBlockItem(BlockInit.FIG_DOOR);
 
         buttonItem(BlockInit.HAZEL_BUTTON, BlockInit.HAZEL_PLANKS);
+        buttonItem(BlockInit.FIG_BUTTON, BlockInit.FIG_PLANKS);
 
         fenceItem(BlockInit.HAZEL_FENCE, BlockInit.HAZEL_PLANKS);
+        fenceItem(BlockInit.FIG_FENCE, BlockInit.FIG_PLANKS);
 
         trapdoorItem(BlockInit.HAZEL_TRAPDOOR);
+        trapdoorItem(BlockInit.FIG_TRAPDOOR);
 
         evenSimplerBlockItem(BlockInit.HAZEL_STAIRS);
         evenSimplerBlockItem(BlockInit.HAZEL_SLAB);
         evenSimplerBlockItem(BlockInit.HAZEL_PRESSURE_PLATE);
         evenSimplerBlockItem(BlockInit.HAZEL_FENCE_GATE);
+        evenSimplerBlockItem(BlockInit.FIG_STAIRS);
+        evenSimplerBlockItem(BlockInit.FIG_SLAB);
+        evenSimplerBlockItem(BlockInit.FIG_PRESSURE_PLATE);
+        evenSimplerBlockItem(BlockInit.FIG_FENCE_GATE);
 
         saplingItem(BlockInit.HAZEL_SAPLING);
+        saplingItem(BlockInit.FIG_SAPLING);
 
         // Farmers Delight
         if (ModList.get().isLoaded("farmersdelight")) {
@@ -92,6 +106,7 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
             simpleItem(FDItemInit.PIZZA_SLICE);
 
             evenSimplerBlockItem(FDBlockInit.HAZEL_CABINET);
+            evenSimplerBlockItem(FDBlockInit.FIG_CABINET);
         }
     }
 

@@ -162,13 +162,18 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
                 .unlockedBy("has_marshmallow", has(ItemInit.MARSHMALLOW_ON_A_STICK.get())).save(writer);
 
         woodenBoat(writer, ItemInit.HAZEL_BOAT.get(), ItemInit.HAZEL_PLANKS.get());
+        woodenBoat(writer, ItemInit.FIG_BOAT.get(), ItemInit.FIG_PLANKS.get());
 
         chestBoat(writer, ItemInit.HAZEL_CHEST_BOAT.get(), ItemInit.HAZEL_BOAT.get());
+        chestBoat(writer, ItemInit.FIG_CHEST_BOAT.get(), ItemInit.FIG_BOAT.get());
 
         hangingSign(writer, ItemInit.HAZEL_HANGING_SIGN_ITEM.get(), BlockInit.STRIPPED_HAZEL_LOG.get());
+        hangingSign(writer, ItemInit.FIG_HANGING_SIGN_ITEM.get(), BlockInit.STRIPPED_FIG_LOG.get());
 
         woodFromLogs(writer, BlockInit.HAZEL_WOOD.get(), BlockInit.HAZEL_LOG.get());
         woodFromLogs(writer, BlockInit.STRIPPED_HAZEL_WOOD.get(), BlockInit.STRIPPED_HAZEL_LOG.get());
+        woodFromLogs(writer, BlockInit.FIG_WOOD.get(), BlockInit.FIG_LOG.get());
+        woodFromLogs(writer, BlockInit.STRIPPED_FIG_WOOD.get(), BlockInit.STRIPPED_FIG_LOG.get());
 
         // Minecraft
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, Items.BREAD).define('#', Tags.Items.CROPS_WHEAT).pattern("###")
@@ -203,6 +208,11 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
                     .define('D', ItemInit.HAZEL_TRAPDOOR.get())
                     .unlockedBy("has_hazel_trapdoor", has(ItemInit.HAZEL_TRAPDOOR.get())).group("fd_cabinet")
                     .save(writer, AllYouCanEat.MOD_ID + ":integrations/farmersdelight/hazel_cabinet");
+            ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, FDBlockInit.FIG_CABINET.get()).pattern("___")
+                    .pattern("D D").pattern("___").define('_', ItemInit.FIG_SLAB.get())
+                    .define('D', ItemInit.FIG_TRAPDOOR.get())
+                    .unlockedBy("has_fig_trapdoor", has(ItemInit.FIG_TRAPDOOR.get())).group("fd_cabinet")
+                    .save(writer, AllYouCanEat.MOD_ID + ":integrations/farmersdelight/fig_cabinet");
         }
     }
 

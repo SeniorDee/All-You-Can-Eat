@@ -125,11 +125,32 @@ public class AllYouCanEat {
             event.accept(ItemInit.PARROTFRUIT.get());
             event.accept(ItemInit.SOUL_BOTTLE.get());
             event.accept(ItemInit.SOUL_SHAKE.get());
+            event.accept(ItemInit.FIG.get());
+            event.accept(ItemInit.FIG_LOG.get());
+            event.accept(ItemInit.STRIPPED_FIG_LOG.get());
+            event.accept(ItemInit.FIG_WOOD.get());
+            event.accept(ItemInit.STRIPPED_FIG_WOOD.get());
+            event.accept(ItemInit.FIG_PLANKS.get());
+            event.accept(ItemInit.FIG_SLAB.get());
+            event.accept(ItemInit.FIG_STAIRS.get());
+            event.accept(ItemInit.FIG_BUTTON.get());
+            event.accept(ItemInit.FIG_PRESSURE_PLATE.get());
+            event.accept(ItemInit.FIG_FENCE.get());
+            event.accept(ItemInit.FIG_FENCE_GATE.get());
+            event.accept(ItemInit.FIG_DOOR.get());
+            event.accept(ItemInit.FIG_TRAPDOOR.get());
+            event.accept(ItemInit.FIG_SIGN_ITEM.get());
+            event.accept(ItemInit.FIG_HANGING_SIGN_ITEM.get());
+            event.accept(ItemInit.FIG_BOAT.get());
+            event.accept(ItemInit.FIG_CHEST_BOAT.get());
+            event.accept(ItemInit.FIG_LEAVES.get());
+            event.accept(ItemInit.FIG_SAPLING.get());
 
             if (ModList.get().isLoaded("farmersdelight")) {
                 event.accept(FDItemInit.CHOCOLATE_CAKE_SLICE.get());
                 event.accept(FDItemInit.STRAWBERRY_CAKE_SLICE.get());
                 event.accept(FDItemInit.PIZZA_SLICE.get());
+                event.accept(FDItemInit.HAZEL_CABINET.get());
             }
         }
     }

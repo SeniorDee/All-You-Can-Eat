@@ -18,88 +18,89 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 public class BoatEntity extends Boat {
-	private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class,
-			EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(BoatEntity.class,
+            EntityDataSerializers.INT);
 
-	public BoatEntity(EntityType<? extends Boat> entityType, Level level) {
-		super(entityType, level);
-	}
+    public BoatEntity(EntityType<? extends Boat> entityType, Level level) {
+        super(entityType, level);
+    }
 
-	public BoatEntity(Level world, double x, double y, double z) {
-		this(EntityTypesInit.BOAT_ENTITY.get(), world);
-		this.setPos(x, y, z);
-		this.xo = x;
-		this.yo = y;
-		this.zo = z;
-	}
+    public BoatEntity(Level world, double x, double y, double z) {
+        this(EntityTypesInit.BOAT_ENTITY.get(), world);
+        this.setPos(x, y, z);
+        this.xo = x;
+        this.yo = y;
+        this.zo = z;
+    }
 
-	@Override
-	public Item getDropItem() {
-		return switch (getModVariant()) {
-			case HAZEL -> ItemInit.HAZEL_BOAT.get();
-		};
-	}
+    @Override
+    public Item getDropItem() {
+        return switch (getModVariant()) {
+            case HAZEL -> ItemInit.HAZEL_BOAT.get();
+            case FIG -> ItemInit.FIG_BOAT.get();
+        };
+    }
 
-	public void setVariant(Type variant) {
-		this.entityData.set(DATA_ID_TYPE, variant.ordinal());
-	}
+    public void setVariant(Type variant) {
+        this.entityData.set(DATA_ID_TYPE, variant.ordinal());
+    }
 
-	public Type getModVariant() {
-		return Type.byId(this.entityData.get(DATA_ID_TYPE));
-	}
+    public Type getModVariant() {
+        return Type.byId(this.entityData.get(DATA_ID_TYPE));
+    }
 
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(DATA_ID_TYPE, Type.HAZEL.ordinal());
-	}
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(DATA_ID_TYPE, Type.HAZEL.ordinal());
+    }
 
-	protected void addAdditionalSaveData(CompoundTag compound) {
-		compound.putString("Type", this.getModVariant().getSerializedName());
-	}
+    protected void addAdditionalSaveData(CompoundTag compound) {
+        compound.putString("Type", this.getModVariant().getSerializedName());
+    }
 
-	protected void readAdditionalSaveData(CompoundTag compound) {
-		if (compound.contains("Type", 8)) {
-			this.setVariant(Type.byName(compound.getString("Type")));
-		}
-	}
+    protected void readAdditionalSaveData(CompoundTag compound) {
+        if (compound.contains("Type", 8)) {
+            this.setVariant(Type.byName(compound.getString("Type")));
+        }
+    }
 
-	public static enum Type implements StringRepresentable {
-		HAZEL(BlockInit.HAZEL_PLANKS.get(), "hazel");
+    public static enum Type implements StringRepresentable {
+        HAZEL(BlockInit.HAZEL_PLANKS.get(), "hazel"), FIG(BlockInit.FIG_PLANKS.get(), "fig");
 
-		private final String name;
-		private final Block planks;
-		public static final StringRepresentable.EnumCodec<BoatEntity.Type> CODEC = StringRepresentable
-				.fromEnum(BoatEntity.Type::values);
-		private static final IntFunction<BoatEntity.Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(),
-				ByIdMap.OutOfBoundsStrategy.ZERO);
+        private final String name;
+        private final Block planks;
+        public static final StringRepresentable.EnumCodec<BoatEntity.Type> CODEC =
+                StringRepresentable.fromEnum(BoatEntity.Type::values);
+        private static final IntFunction<BoatEntity.Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(),
+                ByIdMap.OutOfBoundsStrategy.ZERO);
 
-		private Type(Block planks, String name) {
-			this.name = name;
-			this.planks = planks;
-		}
+        private Type(Block planks, String name) {
+            this.name = name;
+            this.planks = planks;
+        }
 
-		public String getSerializedName() {
-			return this.name;
-		}
+        public String getSerializedName() {
+            return this.name;
+        }
 
-		public String getName() {
-			return this.name;
-		}
+        public String getName() {
+            return this.name;
+        }
 
-		public Block getPlanks() {
-			return this.planks;
-		}
+        public Block getPlanks() {
+            return this.planks;
+        }
 
-		public String toString() {
-			return this.name;
-		}
+        public String toString() {
+            return this.name;
+        }
 
-		public static BoatEntity.Type byId(int id) {
-			return BY_ID.apply(id);
-		}
+        public static BoatEntity.Type byId(int id) {
+            return BY_ID.apply(id);
+        }
 
-		public static BoatEntity.Type byName(String name) {
-			return CODEC.byName(name, HAZEL);
-		}
-	}
+        public static BoatEntity.Type byName(String name) {
+            return CODEC.byName(name, HAZEL);
+        }
+    }
 }

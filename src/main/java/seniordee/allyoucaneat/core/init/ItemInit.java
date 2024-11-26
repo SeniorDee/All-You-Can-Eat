@@ -159,6 +159,23 @@ public class ItemInit {
     public static final RegistryObject<Item> CHILI_PEPPER = ITEMS.register("chili_pepper",
             () -> new ChiliPepperItem(new Item.Properties().food(FoodInit.CHILI_PEPPER)));
 
+    public static final RegistryObject<Item> FIG = ITEMS.register("fig",
+            () -> new Item(new Item.Properties().food(FoodInit.FIG)));
+
+    public static final RegistryObject<Item> FIG_SIGN_ITEM = ITEMS.register("fig_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), BlockInit.FIG_SIGN.get(),
+                    BlockInit.FIG_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> FIG_HANGING_SIGN_ITEM = ITEMS.register("fig_hanging_sign",
+            () -> new HangingSignItem(BlockInit.FIG_HANGING_SIGN.get(), BlockInit.FIG_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> FIG_BOAT = ITEMS.register("fig_boat", () -> new BoatItem(false,
+            BoatEntity.Type.FIG, new Item.Properties()));
+
+    public static final RegistryObject<Item> FIG_CHEST_BOAT = ITEMS.register("fig_chest_boat",
+            () -> new BoatItem(true, BoatEntity.Type.FIG, new Item.Properties()));
+
     // Blocks
 
     public static final RegistryObject<BlockItem> WINE_BOTTLE = ITEMS.register("wine_bottle",
@@ -229,6 +246,51 @@ public class ItemInit {
     public static final RegistryObject<BlockItem> BROWN_HAY_BLOCK = ITEMS.register("brown_hay_block",
             () -> new BlockItem(BlockInit.BROWN_HAY_BLOCK.get(), new Item.Properties()));
 
+    public static final RegistryObject<BlockItem> FIG_LOG = ITEMS.register("fig_log",
+            () -> new BlockItem(BlockInit.FIG_LOG.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> STRIPPED_FIG_LOG = ITEMS.register("stripped_fig_log",
+            () -> new BlockItem(BlockInit.STRIPPED_FIG_LOG.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_WOOD = ITEMS.register("fig_wood",
+            () -> new BlockItem(BlockInit.FIG_WOOD.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> STRIPPED_FIG_WOOD = ITEMS.register("stripped_fig_wood",
+            () -> new BlockItem(BlockInit.STRIPPED_FIG_WOOD.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_PLANKS = ITEMS.register("fig_planks",
+            () -> new BlockItem(BlockInit.FIG_PLANKS.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_SLAB = ITEMS.register("fig_slab",
+            () -> new BlockItem(BlockInit.FIG_SLAB.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_STAIRS = ITEMS.register("fig_stairs",
+            () -> new BlockItem(BlockInit.FIG_STAIRS.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_LEAVES = ITEMS.register("fig_leaves",
+            () -> new BlockItem(BlockInit.FIG_LEAVES.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_SAPLING = ITEMS.register("fig_sapling",
+            () -> new BlockItem(BlockInit.FIG_SAPLING.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_BUTTON = ITEMS.register("fig_button",
+            () -> new BlockItem(BlockInit.FIG_BUTTON.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_PRESSURE_PLATE = ITEMS.register("fig_pressure_plate",
+            () -> new BlockItem(BlockInit.FIG_PRESSURE_PLATE.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_FENCE = ITEMS.register("fig_fence",
+            () -> new BlockItem(BlockInit.FIG_FENCE.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_FENCE_GATE = ITEMS.register("fig_fence_gate",
+            () -> new BlockItem(BlockInit.FIG_FENCE_GATE.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_DOOR = ITEMS.register("fig_door",
+            () -> new BlockItem(BlockInit.FIG_DOOR.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> FIG_TRAPDOOR = ITEMS.register("fig_trapdoor",
+            () -> new BlockItem(BlockInit.FIG_TRAPDOOR.get(), new Item.Properties()));
+
     // Other
 
     public static void addSeeds() {
@@ -252,6 +314,9 @@ public class ItemInit {
         registerCompostable(0.3f, BROWN_WHEAT_SEEDS.get());
         registerCompostable(0.85f, BROWN_HAY_BLOCK.get());
         registerCompostable(0.3f, HAZEL_SAPLING.get());
+        registerCompostable(0.3f, FIG.get());
+        registerCompostable(0.3f, FIG_LEAVES.get());
+        registerCompostable(0.3f, FIG_SAPLING.get());
     }
 
     private static void registerCompostable(float chance, ItemLike itemProvider) {

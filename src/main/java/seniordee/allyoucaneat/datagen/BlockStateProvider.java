@@ -31,12 +31,17 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(BlockInit.HAZEL_PLANKS);
+        blockWithItem(BlockInit.FIG_PLANKS);
 
         blockItem(BlockInit.HAZEL_LOG);
         blockItem(BlockInit.HAZEL_WOOD);
         blockItem(BlockInit.STRIPPED_HAZEL_LOG);
         blockItem(BlockInit.STRIPPED_HAZEL_WOOD);
         blockItem(BlockInit.BROWN_HAY_BLOCK);
+        blockItem(BlockInit.FIG_LOG);
+        blockItem(BlockInit.FIG_WOOD);
+        blockItem(BlockInit.STRIPPED_FIG_LOG);
+        blockItem(BlockInit.STRIPPED_FIG_WOOD);
 
         strawberryBush((StrawberryBushBlock) BlockInit.STRAWBERRY_BUSH.get(), "strawberry_bush_stage",
                 "strawberry_bush_stage");
@@ -91,36 +96,55 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
         candleCakeBlock(BlockInit.YELLOW_CANDLE_STRAWBERRY_CAKE);
 
         stairsBlock(((StairBlock) BlockInit.HAZEL_STAIRS.get()), blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        stairsBlock(((StairBlock) BlockInit.FIG_STAIRS.get()), blockTexture(BlockInit.FIG_PLANKS.get()));
 
         slabBlock(((SlabBlock) BlockInit.HAZEL_SLAB.get()), blockTexture(BlockInit.HAZEL_PLANKS.get()),
                 blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        slabBlock(((SlabBlock) BlockInit.FIG_SLAB.get()), blockTexture(BlockInit.FIG_PLANKS.get()),
+                blockTexture(BlockInit.FIG_PLANKS.get()));
 
         pressurePlateBlock(((PressurePlateBlock) BlockInit.HAZEL_PRESSURE_PLATE.get()),
                 blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) BlockInit.FIG_PRESSURE_PLATE.get()),
+                blockTexture(BlockInit.FIG_PLANKS.get()));
 
         buttonBlock(((ButtonBlock) BlockInit.HAZEL_BUTTON.get()), blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        buttonBlock(((ButtonBlock) BlockInit.FIG_BUTTON.get()), blockTexture(BlockInit.FIG_PLANKS.get()));
 
         fenceBlock(((FenceBlock) BlockInit.HAZEL_FENCE.get()), blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        fenceBlock(((FenceBlock) BlockInit.FIG_FENCE.get()), blockTexture(BlockInit.FIG_PLANKS.get()));
 
         fenceGateBlock(((FenceGateBlock) BlockInit.HAZEL_FENCE_GATE.get()), blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) BlockInit.FIG_FENCE_GATE.get()), blockTexture(BlockInit.FIG_PLANKS.get()));
 
         doorBlockWithRenderType(((DoorBlock) BlockInit.HAZEL_DOOR.get()), modLoc("block/hazel_door_bottom"), modLoc(
                 "block/hazel_door_top"), "cutout");
+        doorBlockWithRenderType(((DoorBlock) BlockInit.FIG_DOOR.get()), modLoc("block/fig_door_bottom"), modLoc(
+                "block/fig_door_top"), "cutout");
 
         trapdoorBlockWithRenderType(((TrapDoorBlock) BlockInit.HAZEL_TRAPDOOR.get()), modLoc("block" +
                 "/hazel_trapdoor"), true, "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) BlockInit.FIG_TRAPDOOR.get()), modLoc("block" + "/fig_trapdoor")
+                , true, "cutout");
 
         signBlock((StandingSignBlock) BlockInit.HAZEL_SIGN.get(), (WallSignBlock) BlockInit.HAZEL_WALL_SIGN.get(),
                 blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        signBlock((StandingSignBlock) BlockInit.FIG_SIGN.get(), (WallSignBlock) BlockInit.FIG_WALL_SIGN.get(),
+                blockTexture(BlockInit.FIG_PLANKS.get()));
 
         hangingSignBlock(BlockInit.HAZEL_HANGING_SIGN.get(), BlockInit.HAZEL_WALL_HANGING_SIGN.get(),
                 blockTexture(BlockInit.HAZEL_PLANKS.get()));
+        hangingSignBlock(BlockInit.FIG_HANGING_SIGN.get(), BlockInit.FIG_WALL_HANGING_SIGN.get(),
+                blockTexture(BlockInit.FIG_PLANKS.get()));
 
         leavesBlock(BlockInit.HAZEL_LEAVES);
+        leavesBlock(BlockInit.FIG_LEAVES);
 
         saplingBlock(BlockInit.HAZEL_SAPLING);
+        saplingBlock(BlockInit.FIG_SAPLING);
 
         logBlock(((RotatedPillarBlock) BlockInit.HAZEL_LOG.get()));
+        logBlock(((RotatedPillarBlock) BlockInit.FIG_LOG.get()));
 
         axisBlock(((RotatedPillarBlock) BlockInit.HAZEL_WOOD.get()), blockTexture(BlockInit.HAZEL_LOG.get()),
                 blockTexture(BlockInit.HAZEL_LOG.get()));
@@ -132,6 +156,13 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
         axisBlock(((RotatedPillarBlock) BlockInit.BROWN_HAY_BLOCK.get()), new ResourceLocation(AllYouCanEat.MOD_ID,
                 "block/brown_hay_block_side"), new ResourceLocation(AllYouCanEat.MOD_ID, "block" +
                 "/brown_hay_block_top"));
+        axisBlock(((RotatedPillarBlock) BlockInit.FIG_WOOD.get()), blockTexture(BlockInit.FIG_LOG.get()),
+                blockTexture(BlockInit.FIG_LOG.get()));
+        axisBlock(((RotatedPillarBlock) BlockInit.STRIPPED_FIG_LOG.get()),
+                blockTexture(BlockInit.STRIPPED_FIG_LOG.get()), new ResourceLocation(AllYouCanEat.MOD_ID, "block" +
+                        "/stripped_fig_log_top"));
+        axisBlock(((RotatedPillarBlock) BlockInit.STRIPPED_FIG_WOOD.get()),
+                blockTexture(BlockInit.STRIPPED_FIG_LOG.get()), blockTexture(BlockInit.STRIPPED_FIG_LOG.get()));
 
         layeredCauldron(BlockInit.MILK_CAULDRON);
         layeredCauldron(BlockInit.RED_WINE_CAULDRON);
@@ -148,6 +179,7 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
 
         if (ModList.get().isLoaded("farmersdelight")) {
             cabinetBlock(FDBlockInit.HAZEL_CABINET.get(), "hazel");
+            cabinetBlock(FDBlockInit.FIG_CABINET.get(), "fig");
         }
     }
 

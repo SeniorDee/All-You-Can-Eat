@@ -28,14 +28,17 @@ public class BlockTagProvider extends BlockTagsProvider {
         this.tag(TagInit.Blocks.HAZEL_LOGS)
                 .add(BlockInit.HAZEL_LOG.get(), BlockInit.STRIPPED_HAZEL_LOG.get(), BlockInit.HAZEL_WOOD.get(),
                         BlockInit.STRIPPED_HAZEL_WOOD.get());
+        this.tag(TagInit.Blocks.FIG_LOGS)
+                .add(BlockInit.FIG_LOG.get(), BlockInit.STRIPPED_FIG_LOG.get(), BlockInit.FIG_WOOD.get(),
+                        BlockInit.STRIPPED_FIG_WOOD.get());
 
         // Forge
         this.tag(TagInit.Blocks.BRICKS).add(Blocks.BRICKS);
         this.tag(TagInit.Blocks.CROPS)
                 .add(BlockInit.BLACK_GRAPE_CROP.get(), BlockInit.TOMATO_CROP.get(), BlockInit.WHITE_GRAPE_CROP.get(),
                         BlockInit.BROWN_WHEAT_CROP.get(), BlockInit.STRAWBERRY_BUSH.get());
-        this.tag(Tags.Blocks.FENCE_GATES).add(BlockInit.HAZEL_FENCE_GATE.get());
-        this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(BlockInit.HAZEL_FENCE_GATE.get());
+        this.tag(Tags.Blocks.FENCE_GATES).add(BlockInit.HAZEL_FENCE_GATE.get(), BlockInit.FIG_FENCE_GATE.get());
+        this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(BlockInit.HAZEL_FENCE_GATE.get(), BlockInit.FIG_FENCE_GATE.get());
 
         // Minecraft
         this.tag(BlockTags.CANDLE_CAKES)
@@ -59,27 +62,30 @@ public class BlockTagProvider extends BlockTagsProvider {
                         BlockInit.GREEN_CANDLE_STRAWBERRY_CAKE.get(), BlockInit.RED_CANDLE_STRAWBERRY_CAKE.get(),
                         BlockInit.BLACK_CANDLE_STRAWBERRY_CAKE.get());
         this.tag(BlockTags.CROPS).addTag(TagInit.Blocks.CROPS);
-        this.tag(BlockTags.FENCE_GATES).add(BlockInit.HAZEL_FENCE_GATE.get());
-        this.tag(BlockTags.LEAVES).add(BlockInit.HAZEL_LEAVES.get());
-        this.tag(BlockTags.FENCES).add(BlockInit.HAZEL_FENCE.get());
-        this.tag(BlockTags.LOGS).addTag(TagInit.Blocks.HAZEL_LOGS);
-        this.tag(BlockTags.LOGS_THAT_BURN).addTag(TagInit.Blocks.HAZEL_LOGS);
-        this.tag(BlockTags.PLANKS).add(BlockInit.HAZEL_PLANKS.get());
-        this.tag(BlockTags.SAPLINGS).add(BlockInit.HAZEL_SAPLING.get());
-        this.tag(BlockTags.STANDING_SIGNS).add(BlockInit.HAZEL_SIGN.get());
-        this.tag(BlockTags.WALL_SIGNS).add(BlockInit.HAZEL_WALL_SIGN.get());
-        this.tag(BlockTags.WOODEN_BUTTONS).add(BlockInit.HAZEL_BUTTON.get());
-        this.tag(BlockTags.WOODEN_DOORS).add(BlockInit.HAZEL_DOOR.get());
-        this.tag(BlockTags.WOODEN_FENCES).add(BlockInit.HAZEL_FENCE.get());
-        this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(BlockInit.HAZEL_PRESSURE_PLATE.get());
-        this.tag(BlockTags.WOODEN_SLABS).add(BlockInit.HAZEL_SLAB.get());
-        this.tag(BlockTags.WOODEN_STAIRS).add(BlockInit.HAZEL_STAIRS.get());
-        this.tag(BlockTags.WOODEN_TRAPDOORS).add(BlockInit.HAZEL_TRAPDOOR.get());
-        this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(BlockInit.HAZEL_LOG.get());
+        this.tag(BlockTags.FENCE_GATES).add(BlockInit.HAZEL_FENCE_GATE.get(), BlockInit.FIG_FENCE_GATE.get());
+        this.tag(BlockTags.LEAVES).add(BlockInit.HAZEL_LEAVES.get(), BlockInit.FIG_LEAVES.get());
+        this.tag(BlockTags.FENCES).add(BlockInit.HAZEL_FENCE.get(), BlockInit.FIG_FENCE.get());
+        this.tag(BlockTags.LOGS).addTag(TagInit.Blocks.HAZEL_LOGS).addTag(TagInit.Blocks.FIG_LOGS);
+        this.tag(BlockTags.LOGS_THAT_BURN).addTag(TagInit.Blocks.HAZEL_LOGS).addTag(TagInit.Blocks.FIG_LOGS);
+        this.tag(BlockTags.PLANKS).add(BlockInit.HAZEL_PLANKS.get(), BlockInit.FIG_PLANKS.get());
+        this.tag(BlockTags.SAPLINGS).add(BlockInit.HAZEL_SAPLING.get(), BlockInit.FIG_SAPLING.get());
+        this.tag(BlockTags.STANDING_SIGNS).add(BlockInit.HAZEL_SIGN.get(), BlockInit.FIG_SIGN.get());
+        this.tag(BlockTags.WALL_SIGNS).add(BlockInit.HAZEL_WALL_SIGN.get(), BlockInit.FIG_WALL_SIGN.get());
+        this.tag(BlockTags.WOODEN_BUTTONS).add(BlockInit.HAZEL_BUTTON.get(), BlockInit.FIG_BUTTON.get());
+        this.tag(BlockTags.WOODEN_DOORS).add(BlockInit.HAZEL_DOOR.get(), BlockInit.FIG_DOOR.get());
+        this.tag(BlockTags.WOODEN_FENCES).add(BlockInit.HAZEL_FENCE.get(), BlockInit.FIG_FENCE.get());
+        this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(BlockInit.HAZEL_PRESSURE_PLATE.get(), BlockInit.FIG_PRESSURE_PLATE.get());
+        this.tag(BlockTags.WOODEN_SLABS).add(BlockInit.HAZEL_SLAB.get(), BlockInit.FIG_SLAB.get());
+        this.tag(BlockTags.WOODEN_STAIRS).add(BlockInit.HAZEL_STAIRS.get(), BlockInit.FIG_STAIRS.get());
+        this.tag(BlockTags.WOODEN_TRAPDOORS).add(BlockInit.HAZEL_TRAPDOOR.get(), BlockInit.FIG_TRAPDOOR.get());
+        this.tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(BlockInit.HAZEL_LOG.get(), BlockInit.FIG_LOG.get());
         this.tag(BlockTags.MAINTAINS_FARMLAND).addTag(TagInit.Blocks.CROPS);
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockInit.BROWN_HAY_BLOCK.get());
-        this.tag(BlockTags.CEILING_HANGING_SIGNS).add(BlockInit.HAZEL_HANGING_SIGN.get());
-        this.tag(BlockTags.WALL_HANGING_SIGNS).add(BlockInit.HAZEL_WALL_HANGING_SIGN.get());
+        this.tag(BlockTags.CEILING_HANGING_SIGNS)
+                .add(BlockInit.HAZEL_HANGING_SIGN.get(), BlockInit.FIG_HANGING_SIGN.get());
+        this.tag(BlockTags.WALL_HANGING_SIGNS)
+                .add(BlockInit.HAZEL_WALL_HANGING_SIGN.get(), BlockInit.FIG_WALL_HANGING_SIGN.get());
 
         // Serene Seasons
         if (ModList.get().isLoaded("sereneseasons")) {
@@ -89,12 +95,13 @@ public class BlockTagProvider extends BlockTagsProvider {
             this.tag(TagInit.Blocks.SUMMER_CROPS)
                     .add(BlockInit.BLACK_GRAPE_CROP.get(), BlockInit.WHITE_GRAPE_CROP.get(),
                             BlockInit.HAZEL_SAPLING.get(), BlockInit.BROWN_WHEAT_CROP.get(),
-                            BlockInit.TOMATO_CROP.get(), BlockInit.STRAWBERRY_BUSH.get());
+                            BlockInit.TOMATO_CROP.get(), BlockInit.STRAWBERRY_BUSH.get(), BlockInit.FIG_SAPLING.get());
+            this.tag(TagInit.Blocks.SPRING_CROPS).add(BlockInit.FIG_SAPLING.get());
         }
 
         // Farmer's Delight
         if (ModList.get().isLoaded("farmersdelight")) {
-            this.tag(BlockTags.MINEABLE_WITH_AXE).add(FDBlockInit.HAZEL_CABINET.get());
+            this.tag(BlockTags.MINEABLE_WITH_AXE).add(FDBlockInit.HAZEL_CABINET.get(), FDBlockInit.FIG_CABINET.get());
         }
     }
 }
